@@ -1,0 +1,111 @@
+/* Hamburger ICon Component */
+
+/* off-screen-menu */
+.off-screen-menu {
+    background-color:#f9f9f9;
+    width: 100%;
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+    transition: .4s ease;   
+    color:#000;
+    padding: 0px 10px 10px 14px;
+    height: 0vh;
+}
+
+.off-screen-menu.active {
+    height: 27vh;
+    visibility: visible;
+    opacity: 1;
+    transition: .4s ease;
+}
+
+.off-screen-menu p{
+    font-size: 1.2rem;
+    font-family: "Inter", sans-serif;
+}
+
+.off-screen-menu p:active{
+    color: #504949;
+}
+
+/* ham menu */
+.ham-menu {
+    height: 36px;
+    width: 45px;
+    margin-left: auto;
+    position: absolute;
+    top: 0%;    
+    left: 3%; 
+    margin: 17px 30px 0px 0px;
+    border-radius: 7px;
+}
+
+.ham-menu span {
+    height: 3px;
+    background-color: #000;
+    border-radius: 23px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+
+.ham-menu span:nth-child(1) {
+    top: 25%;
+    width: 65%;
+}
+
+.ham-menu span:nth-child(2){
+    width: 65%;
+}
+.ham-menu span:nth-child(3) {
+    top: 75%;
+    width: 65%;
+}
+
+.ham-menu.active span {
+    background-color: #000;
+    position: absolute;
+}
+
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+    width: 65%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Nav Selection */
+.nav-sel-cont{
+    position: absolute;
+    width:55%;
+    min-width: 625px;
+    margin-right:17px ;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    top: 28%;
+    font-size: 0.93rem;
+    right: 2.3%; 
+}
+
+.nav-sel-cont p{
+    cursor: pointer;
+}
+
+.nav-sel-cont p:active{
+    color: #292020;
+}
+.nav-sel-cont p:hover{
+    color: #3f3b3b;
+}
