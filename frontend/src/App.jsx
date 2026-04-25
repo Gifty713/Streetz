@@ -1,9 +1,13 @@
-import Nav from "../components/MainComponent/Home";
+import Home from "../components/MainComponent/Home";
+import Cart from "../components/MainComponent/Cart";
+import Shop from "../components/MainComponent/Shop";
 import "./App.css";
 const App=()=>{
     return(
         <div>
-            <Nav/>
+            <Home/>
+            {/* <Cart/> */}
+            {/* <Shop/> */}
         </div>
     )
 }
