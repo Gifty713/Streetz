@@ -3,7 +3,7 @@ import Footer from "./Footer";
 const Breif =()=>{
     const displayedClothes=["/jacket.jpg", "/pink_shirt.jpg", "/rema.jpg", "/singlet.jpg"];
     return(
-        <div style={{position:"relative", overflowX:"hidden", width:"100%"}}>
+        <div style={{position:"relative", width:"100%"}}>
             <div className="filter-bar" style={{color:"#fff", backgroundColor:"#000", width:"100%", textAlign:"center", padding:"7px", marginTop:"10px"}}><p>FILTER</p></div>
             <div className="home-clothes-displayed">
                 {displayedClothes.map((cloth, key)=>{
@@ -20,12 +20,6 @@ const Breif =()=>{
             </div>
             <div className="filter-bar" style={{color:"#fff", backgroundColor:"#000", width:"100%", textAlign:"center", padding:"7px", marginTop:"10px"}}><p>SEE MORE</p></div>
             <Footer/>
-            <div className="nav-tab-below">
-                <p>Home</p>
-                <p>Search</p>
-                <p>Shop</p>
-                <p>Cart</p>
-            </div>
         </div>
     )
 }
