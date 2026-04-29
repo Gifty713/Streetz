@@ -14,14 +14,14 @@ function Hamburger() {
       <span></span>
       <span></span>
     </div>
-    <div className={active? "off-screen-menu active" : "off-screen-menu"}>
+    {/* <div className={active? "off-screen-menu active" : "off-screen-menu"}> */}
       {/* <p>About Us</p> */}
       {/* <p>Vision and Achievements </p>
       <p>Investment Process</p>
       <p>Investment Options</p>
       <p>Parent Company: Xymbolic Development</p>
       <p>Contact Us</p> */}
-    </div>
+    {/* </div> */}
   </div>
 
   );

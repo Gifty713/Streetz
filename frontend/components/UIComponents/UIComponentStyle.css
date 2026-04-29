@@ -3,7 +3,7 @@
 /* off-screen-menu */
 .off-screen-menu {
     background-color:#f9f9f9;
-    width: 100%;
+    width: 50%;
     visibility: hidden;
     position: absolute;
     opacity: 0;
@@ -35,15 +35,15 @@
     width: 45px;
     margin-left: auto;
     position: absolute;
-    top: 0%;    
+    top: -1%;    
     left: 3%; 
     margin: 17px 30px 0px 0px;
     border-radius: 7px;
 }
 
 .ham-menu span {
-    height: 3px;
-    background-color: #000;
+    height: 2px;
+    background-color: #fff;
     border-radius: 23px;
     position: absolute;
     left: 50%;
@@ -66,7 +66,7 @@
 }
 
 .ham-menu.active span {
-    background-color: #000;
+    background-color: #fff;
     position: absolute;
 }
 

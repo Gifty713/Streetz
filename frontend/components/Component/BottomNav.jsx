@@ -1,0 +1,42 @@
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import CssBaseline from '@mui/material/CssBaseline';
+import BottomNavigation from '@mui/material/BottomNavigation';
+import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import HomeIcon from '@mui/icons-material/Home';
+import SearchIcon from '@mui/icons-material/Search';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import StoreIcon from '@mui/icons-material/Store';
+import Paper from '@mui/material/Paper';
+import List from '@mui/material/List';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import ListItemText from '@mui/material/ListItemText';
+import Avatar from '@mui/material/Avatar';
+import { NavLink, useLocation } from 'react-router-dom';
+const Breif2=()=>{
+    const [value, setValue] = React.useState("home");
+    const location= useLocation();
+    const ref = React.useRef(null);
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+    return(
+        <Box sx={{}} ref={ref}>
+            <CssBaseline />
+            <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+                <BottomNavigation
+                value={location.pathname}
+                onChange={handleChange}
+                showLabels
+                >
+                    <BottomNavigationAction label="Home" value="/" icon={<HomeIcon />} component={NavLink} to="/" />
+                    <BottomNavigationAction label="Search" value="search" icon={<SearchIcon />} />
+                    <BottomNavigationAction label="Shop" value="/shop" icon={<StoreIcon />} component={NavLink} to="/shop"/>
+                    <BottomNavigationAction label="Cart" value="/cart" icon={<ShoppingCartIcon />} component={NavLink} to="/cart" />
+                </BottomNavigation>
+            </Paper>
+        </Box>
+    )
+}
+export default Breif2;
