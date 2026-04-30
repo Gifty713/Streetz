@@ -22,13 +22,22 @@ const Breif2=()=>{
         setValue(newValue);
     };
     return(
-        <Box sx={{}} ref={ref}>
+        <Box ref={ref}>
             <CssBaseline />
-            <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+            <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex:"1000" }} elevation={10}>
                 <BottomNavigation
                 value={location.pathname}
                 onChange={handleChange}
                 showLabels
+                sx={{backgroundColor:"#fff", opacity:"1",
+                    "& .Mui-selected": {
+                    color: "#000"  
+                    },
+                    "& .Mui-selected svg": {
+                    color: "#000"  
+                    },                             
+                }}
+                elevation={5}
                 >
                     <BottomNavigationAction label="Home" value="/" icon={<HomeIcon />} component={NavLink} to="/" />
                     <BottomNavigationAction label="Search" value="search" icon={<SearchIcon />} />

@@ -3,13 +3,13 @@ import Footer from "./Footer";
 const Breif =()=>{
     const displayedClothes=["/jacket.jpg", "/pink_shirt.jpg", "/rema.jpg", "/singlet.jpg"];
     return(
-        <div style={{position:"relative", width:"100%"}}>
-            <div className="filter-bar" style={{color:"#fff", backgroundColor:"#000", width:"100%", textAlign:"center", padding:"7px", marginTop:"10px"}}><p>FILTER</p></div>
+        <div style={{position:"relative", width:"100%", zIndex:"3"}}>
+            <p style={{padding:"0px 0px 0px 28px", fontSize:"1.5rem", fontWeight:"400", letterSpacing:"1px", fontFamily: "Boldonse, system-ui"}}>Best Sellers</p>
             <div className="home-clothes-displayed">
                 {displayedClothes.map((cloth, key)=>{
                     return(
                         <div className="home-clothes-img" key={key}>
-                            <img src={cloth} alt="Clothes" style={{width:"100%", height:"150px", objectFit: "cover" }} />
+                            <img src={cloth} alt="Clothes" style={{width:"100%", height:"150px", objectFit: "cover", zIndex:"3" }} />
                             {/* cart icon*/}
                             <p style={{margin:"0px 0px 0px 0px"}}>Name </p>
                             <p style={{margin:"3px 0px 0px 0px"}}>Description of clothe</p>
