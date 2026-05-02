@@ -23,7 +23,7 @@ const ProductSchema = new Schema({
         maxLength: 7,
         required: true
     },
-    imageURL:{
+    image:{
         type: String,
         required: true
     } 
