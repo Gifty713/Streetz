@@ -3,10 +3,10 @@ import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import HomeIcon from '@mui/icons-material/Home';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import SearchIcon from '@mui/icons-material/Search';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import StoreIcon from '@mui/icons-material/Store';
+import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
+import StoreMallDirectoryOutlinedIcon from '@mui/icons-material/StoreMallDirectoryOutlined';
 import Paper from '@mui/material/Paper';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -39,10 +39,10 @@ const Breif2=()=>{
                 }}
                 elevation={5}
                 >
-                    <BottomNavigationAction label="Home" value="/" icon={<HomeIcon />} component={NavLink} to="/" />
+                    <BottomNavigationAction label="Home" value="/" icon={<HomeOutlinedIcon />} component={NavLink} to="/" />
                     <BottomNavigationAction label="Search" value="search" icon={<SearchIcon />} />
-                    <BottomNavigationAction label="Shop" value="/shop" icon={<StoreIcon />} component={NavLink} to="/shop"/>
-                    <BottomNavigationAction label="Cart" value="/cart" icon={<ShoppingCartIcon />} component={NavLink} to="/cart" />
+                    <BottomNavigationAction label="Shop" value="/shop" icon={<StoreMallDirectoryOutlinedIcon />} component={NavLink} to="/shop"/>
+                    <BottomNavigationAction label="Cart" value="/cart" icon={<LocalGroceryStoreOutlinedIcon />} component={NavLink} to="/cart" />
                 </BottomNavigation>
             </Paper>
         </Box>
