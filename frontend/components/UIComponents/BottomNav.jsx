@@ -7,14 +7,11 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
 import StoreMallDirectoryOutlinedIcon from '@mui/icons-material/StoreMallDirectoryOutlined';
+
 import Paper from '@mui/material/Paper';
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import ListItemText from '@mui/material/ListItemText';
-import Avatar from '@mui/material/Avatar';
 import { NavLink, useLocation } from 'react-router-dom';
-const Breif2=()=>{
+
+const BottomNavUser=()=>{
     const [value, setValue] = React.useState("home");
     const location= useLocation();
     const ref = React.useRef(null);
@@ -48,4 +45,38 @@ const Breif2=()=>{
         </Box>
     )
 }
-export default Breif2;
+
+const BottomNavAdmin=()=>{
+    const [value, setValue] = React.useState("dashboard");
+    const location= useLocation();
+    const ref = React.useRef(null);
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+    return(
+        <Box ref={ref}>
+            <CssBaseline />
+            <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex:"1000" }} elevation={10}>
+                <BottomNavigation
+                value={location.pathname}
+                onChange={handleChange}
+                showLabels
+                sx={{backgroundColor:"#fff", opacity:"1",
+                    "& .Mui-selected": {
+                    color: "#000"  
+                    },
+                    "& .Mui-selected svg": {
+                    color: "#000"  
+                    },                             
+                }}
+                elevation={5}
+                >
+                    <BottomNavigationAction label="DashBoard" value="/admin/dashboard" icon={<HomeOutlinedIcon />} component={NavLink} to="/admin/dashboard" />
+                    <BottomNavigationAction label="Products" value="/admin/products" icon={<StoreMallDirectoryOutlinedIcon />} component={NavLink} to="/admin/products"/>
+                    <BottomNavigationAction label="Orders" value="/admin/orders" icon={<LocalGroceryStoreOutlinedIcon />} component={NavLink} to="/admin/orders" />
+                </BottomNavigation>
+            </Paper>
+        </Box>
+    )
+}
+export {BottomNavUser, BottomNavAdmin};
