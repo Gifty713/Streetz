@@ -4,23 +4,22 @@ const ProductSchema = new Schema({
     
     name:{
         type: String,
-        minLength: 5,
-        maxLength: 15,
+        minLength: 1,
+        maxLength: 30,
         unique: true,
         required: true,
         trim: true,
     },
     description:{
         type: String,
-        minLength: 5,
-        maxLength: 15,
+        maxLength: 120,
         required: true,    
         trim: true   
     },
     price:{
         type: Number,
         minLength: 1,
-        maxLength: 7,
+        maxLength: 10,
         required: true
     },
     image:{
