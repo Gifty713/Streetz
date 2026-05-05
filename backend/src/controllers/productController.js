@@ -28,7 +28,8 @@ const addProduct = async(req, res)=>{
 // Function to get all products available
 const getProduct =async(req, res)=>{
     try {
-        console.log("hmmm")
+        const products = await Product.find();
+        res.status(200).json({message:"Products fetced successfully", products});
     } catch (error) {
         res.status(500).json({message: "Internal Server Error"});
     }
@@ -39,4 +40,4 @@ const getProduct =async(req, res)=>{
 // Function to delete a product from database
 
 // Function to update the product
-export {addProduct}
+export {addProduct, getProduct};
