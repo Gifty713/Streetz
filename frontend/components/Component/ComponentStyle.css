@@ -39,3 +39,11 @@
     width: 100%;
 }
 
+
+/* Admin Styling */
+.input-bar-admin:focus{
+    outline: none;
+}
+.input-bar-admin::placeholder{
+    color:rgb(95, 94, 94)
+}
