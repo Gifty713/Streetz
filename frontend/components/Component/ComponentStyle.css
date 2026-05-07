@@ -26,7 +26,7 @@
 .home-clothes-displayed{
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 25px;
     margin: 20px 0px;
     /* border:1px solid magenta; */
     justify-content: center;
@@ -34,6 +34,7 @@
 .home-clothes-img{
     width:100px;
     flex: 0 0 calc(40% );
+    position: relative;
 }
 .home-clothes-img img{
     width: 100%;

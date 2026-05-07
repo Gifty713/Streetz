@@ -1,65 +1,31 @@
-import { useState } from "react"
-import BasicNav from "../UIComponents/BasicNav.jsx"
 import Button from "@mui/material/Button"
+import AddProduct from "../Component/AddProduct"
+import { useState } from "react"
 const AdminProducts = ()=>{
-    const handleSubmit= async(e)=>{
-        e.preventDefault()
-        try {
-            const formData = new FormData(e.target);
-            const respond = await fetch("http://localhost:4000/api/v1/admin/addproduct", {
-                method:"POST",
-                body: formData
-            })
-            const data = await respond.json(); 
-            console.log(data);           
-        } catch (err) {
-            console.error("Error occurred in fetching products.", err)
-        }
-    }
-
+    // State to open add product pop up
+    const [openPop, setOpenPop] = useState(false);
     return(
         <div>
            <p style={{fontSize:"2rem", marginTop:"10px", padding:"0px 20px", fontWeight:"600", marginBottom:"0"}}>Products</p>
-            <Button variant="contained" sx={{display:"block", backgroundColor:"black", marginTop:"0px",padding:"10px",cursor:"pointer", marginLeft:"auto", marginRight:"10%", borderRadius:"10px"}}>Add Product</Button>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="name">
-                    <p style={{fontSize:"1.4rem", fontWeight:"600", margin:"0 0 12px 0"}}>Title</p>
-                    <input type="text" className="input-bar-admin" name="name" style={{height:"30px", width:"85%", height:"50px", border:"1px solid #363434", borderRadius:"10px", padding:"5px 10px", fontSize:"1.4rem", backgroundColor:"#d8d1d1", marginBottom:"25px"}} autoComplete="off" placeholder="Add Title" />
-                </label>
-                <label htmlFor="description">
-                    <p style={{fontSize:"1.4rem", fontWeight:"600", margin:"0 0 12px 0"}}>Description</p>
-                    <textarea name="description" className="input-bar-admin" style={{height:"30px", width:"85%", height:"120px", border:"1px solid #363434", borderRadius:"10px", padding:"5px 10px", fontSize:"1.4rem", backgroundColor:"#d8d1d1", marginBottom:"25px"}} autoComplete="off" placeholder="Add Description"></textarea>                
-                </label>
-                <label htmlFor="price">
-                    <p style={{fontSize:"1.4rem", fontWeight:"600", margin:"0 0 12px 0"}}>Price</p>
-                    <input type="number" className="input-bar-admin" name="price" style={{height:"30px", width:"85%", height:"50px", border:"1px solid #363434", borderRadius:"10px", padding:"5px 10px", fontSize:"1.4rem", backgroundColor:"#d8d1d1", marginBottom:"25px"}} autoComplete="off" placeholder="Add Price" />
-                </label>  
-                <label htmlFor="image">
-                    <p style={{fontSize:"1.4rem", fontWeight:"600", margin:"0 0 12px 0"}}>Image</p>
-                    <input type="file" name="image" style={{height:"30px", fontSize:"1.2rem"}} autoComplete="off"/>
-                </label>
-                <button type="submit" style={{display:"block"}}>Save</button>  
-            </form>
+            {openPop ? <svg viewBox="0 0 24 24" width={"50px"} height={"50px"} xmlns="http://www.w3.org/2000/svg" fill="#FF0000" style={{fontSize:"1.8rem", display:"block", width:"fit-content", color:"red", margin:"0 10% -35px auto"}} onClick={()=>{setOpenPop(false)}}><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="none" stroke="#FF0000" strokeWidth="2" d="M7,7 L17,17 M7,17 L17,7"></path> </g></svg>
+                : <Button variant="contained" sx={{display:"block", backgroundColor:"black", marginTop:"0px",padding:"10px",cursor:"pointer", marginLeft:"auto", marginRight:"10%", borderRadius:"10px",zIndex:"0"}} onClick={()=>{setOpenPop(true)}}>Add Product</Button>}
+            {openPop && <AddProduct childOpenPop = {openPop} childSetOpenPop={setOpenPop} /> }
+            <div style={{display:"flex", padding:"10px 10px 10px 20px", justifyContent:"space-between", width:"74%", alignItems:"center"}}>
+                <div>
+                    <img src="/jacket.jpg" width="90px" height="90px" alt="clothes" />
+                </div>
+                <div>
+                    <p style={{fontSize:"1.4rem", marginBottom:"0px"}}>Name of product</p>
+                    <div style={{display:"flex",  justifyContent:"space-between",width:"100%" ,marginTop:"0px", alignItems:"baseline"}}>
+                        <p style={{fontSize:"1.3rem", marginTop:"0px",}}>#1000</p>
+                        <p style={{marginTop:"0px",}}>25 stocks</p>
+                    </div>
+                    <div style={{display:"flex"}}>
+                        
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
 export default AdminProducts
-            // <form onSubmit={handleSubmit} >
-            //     <label htmlFor="name">
-            //         <p>Name of product</p>
-            //         <input type="text" name="name" style={{height:"30px", fontSize:"1.2rem"}} autoComplete="off"  />
-            //     </label>
-            //     <label htmlFor="description">
-            //         <p>Description of product</p>
-            //         <textarea name="description" style={{ fontSize:"1.2rem"}} ></textarea>
-            //     </label>
-            //     <label htmlFor="price">
-            //         <p>Price of Product</p>
-            //         <input type="number" name="price" style={{height:"30px", fontSize:"1.2rem"}} autoComplete="off" />
-            //     </label>
-            //     <label htmlFor="image">
-            //         <p>Image of product</p>
-            //         <input type="file" name="image" style={{height:"30px", fontSize:"1.2rem"}} autoComplete="off"/>
-            //     </label>
-            //     <button type="submit">Submit</button>
-            // </form>
