@@ -38,6 +38,14 @@ const getProduct =async(req, res)=>{
 // Function to get a particular product based on category/ID
 
 // Function to delete a product from database
-
+const deleteProducts = async(req, res)=>{
+    try {
+        const deletedPost = await Product.findByIdAndDelete();
+        if(!deletedPost)return res.status(404).json({message:"Product not found."});
+        res.status(200).json({message:"Product deleted successfully"});
+    } catch (error) {
+        res.status(500).json({message:"Internal Server Error", error});
+    }
+}
 // Function to update the product
-export {addProduct, getProduct};
+export {addProduct, getProduct, deleteProducts};
