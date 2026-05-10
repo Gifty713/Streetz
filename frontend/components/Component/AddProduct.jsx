@@ -3,7 +3,7 @@ import BasicNav from "../UIComponents/BasicNav.jsx"
 import Button from "@mui/material/Button"
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-const AddProduct = ({childOpenPop, childSetOpenPop}) =>{
+const AddProduct = ({childOpenPop, childSetOpenPop, refreshPage}) =>{
     const handleSubmit= async(e)=>{
         e.preventDefault()
         try {
@@ -13,7 +13,9 @@ const AddProduct = ({childOpenPop, childSetOpenPop}) =>{
                 body: formData
             })
             const data = await respond.json(); 
-            console.log(data);           
+            console.log(data);     
+            childSetOpenPop(false);
+            await refreshPage();    
         } catch (err) {
             console.error("Error occurred in fetching products.", err)
         }
@@ -38,7 +40,7 @@ const AddProduct = ({childOpenPop, childSetOpenPop}) =>{
                         <p style={{fontSize:"1.4rem", fontWeight:"600", margin:"0 0 12px 0"}}>Image</p>
                         <input type="file" name="image" style={{height:"30px", fontSize:"1.2rem", marginBottom:"25px"}} autoComplete="off"/>
                     </label>
-                    <button type="submit" style={{display:"block", backgroundColor:"black", color:"white", width:"90%", height:"50px", margin:"0 auto" ,fontSize:"1.5rem"  ,padding:"10px", borderRadius:"10px"}} onClick={()=>{childSetOpenPop(false)}}>Save</button>  
+                    <button type="submit" style={{display:"block", backgroundColor:"black", color:"white", width:"90%", height:"50px", margin:"0 auto" ,fontSize:"1.5rem"  ,padding:"10px", borderRadius:"10px"}}>Save</button>  
                 </form>         
             </Paper>
         </Box>

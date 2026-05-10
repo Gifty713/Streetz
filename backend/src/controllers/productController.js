@@ -40,9 +40,9 @@ const getProduct =async(req, res)=>{
 // Function to delete a product from database
 const deleteProducts = async(req, res)=>{
     try {
-        const deletedPost = await Product.findByIdAndDelete();
+        const deletedPost = await Product.findByIdAndDelete(req.params.id);
         if(!deletedPost)return res.status(404).json({message:"Product not found."});
-        res.status(200).json({message:"Product deleted successfully"});
+        res.status(200).json({message:"Product deleted successfully", products});
     } catch (error) {
         res.status(500).json({message:"Internal Server Error", error});
     }
