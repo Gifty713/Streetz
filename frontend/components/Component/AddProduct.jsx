@@ -3,7 +3,14 @@ import BasicNav from "../UIComponents/BasicNav.jsx"
 import Button from "@mui/material/Button"
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
+import { FormControl, FormLabel, RadioGroup, FormControlLabel, Radio } from '@mui/material';
 const AddProduct = ({childOpenPop, childSetOpenPop, refreshPage}) =>{
+    // state for radio buttons
+    const [value, setValue] = useState('');
+    const handleChange = (event) => {
+        setValue(event.target.value);
+    };
+
     const handleSubmit= async(e)=>{
         e.preventDefault()
         try {
@@ -36,6 +43,20 @@ const AddProduct = ({childOpenPop, childSetOpenPop, refreshPage}) =>{
                         <p style={{fontSize:"1.4rem", fontWeight:"600", margin:"0 0 12px 0"}}>Price</p>
                         <input type="number" className="input-bar-admin" name="price" style={{height:"30px", width:"85%", height:"50px", border:"1px solid #363434", borderRadius:"10px", padding:"5px 10px", fontSize:"1.4rem", backgroundColor:"#d8d1d1", marginBottom:"25px"}} autoComplete="off" placeholder="Add Price" />
                     </label>  
+                    <label htmlFor="category">
+                        <p style={{fontSize:"1.4rem", fontWeight:"600", margin:"0 0 0px 0"}}>Category</p>
+                        <RadioGroup
+                        aria-label="option"
+                        name="radio-buttons-group"
+                        value={value}
+                        onChange={handleChange}
+                        >
+                        <FormControlLabel value="bottoms" control={<Radio />} label="Bottoms" />
+                        <FormControlLabel value="tops" control={<Radio />} label="Tops" />
+                        <FormControlLabel value="footwear" control={<Radio />} label="Footwear" />
+                        <FormControlLabel value="accessories" control={<Radio />} label="Accessories" />
+                        </RadioGroup>
+                    </label>
                     <label htmlFor="image">
                         <p style={{fontSize:"1.4rem", fontWeight:"600", margin:"0 0 12px 0"}}>Image</p>
                         <input type="file" name="image" style={{height:"30px", fontSize:"1.2rem", marginBottom:"25px"}} autoComplete="off"/>
