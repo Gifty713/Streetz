@@ -22,6 +22,11 @@ const ProductSchema = new Schema({
         maxLength: 10,
         required: true
     },
+    category:{
+        type:String,
+        required: true,
+        trim: true
+    },
     image:{
         type: String,
         required: true

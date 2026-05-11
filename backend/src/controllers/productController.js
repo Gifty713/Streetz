@@ -6,18 +6,19 @@ const addProduct = async(req, res)=>{
         // upload image to cloudinary
         const result = await cloudinary.uploader.upload(req.file.path);
 
-        const {name, description, price, image} = req.body;
+        const {name, description, price, category ,image} = req.body;
 
         // verification
-        if(!name || !description || !price)return res.status(400).json({message:"All fields are required, thank you."});
+        if(!name || !description || !price || !category)return res.status(400).json({message:"All fields are required, thank you."});
         
         // add product to mongodb
-        const product  = await Product.create({name, description, price, image:result.secure_url});
+        const product  = await Product.create({name, description, price,category,image:result.secure_url});
         // return respond
         res.status(200).json({message:"Uploaded successfully", product:{
             id: product._id,
             name: product.name,
-            description: product.description
+            description: product.description,
+            category:product.category
         }})
 
     } catch (err) {

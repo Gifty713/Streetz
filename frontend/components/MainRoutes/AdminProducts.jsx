@@ -28,7 +28,8 @@ const AdminProducts = ()=>{
                 throw new Error("Error occured while deleting.");
             } 
             const data = await response.json();
-            console.log(data.products.name, " deleted successfully");            
+            console.log(data.products.name, " deleted successfully");       
+            fetchProductss();   
         } catch (err) {   
             console.error("Error has occured while fetching.", err);
         }
