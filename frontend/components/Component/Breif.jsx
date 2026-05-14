@@ -1,22 +1,13 @@
 import { useEffect, useState } from "react";
 import {Link} from "react-router-dom"
 import "./ComponentStyle.css"
+import { fetchProducts } from "./FetchProducts";
 import Footer from "./Footer";
 const Breif =()=>{
     const [product, setProduct] = useState([]);
     useEffect(()=>{
-        const fetchProducts = async()=>{
-            try {
-                const respond = await fetch("http://localhost:4000/api/v1/admin/getproducts")
-                const data = await respond.json();
-                setProduct(data.products);
-            } catch (err) {
-                console.error("Error in fetching products", err);
-            }       
-        }
-        fetchProducts();
+        fetchProducts(setProduct);
     }, [])
-
     return(
         <div style={{position:"relative", width:"100%", zIndex:"3"}}>
             <p style={{padding:"0px 0px 0px 28px", fontSize:"1.5rem", fontWeight:"400", letterSpacing:"1px", fontFamily: "Boldonse, system-ui"}}>Best Sellers</p>

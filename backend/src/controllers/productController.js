@@ -37,6 +37,15 @@ const getProduct =async(req, res)=>{
 }
 
 // Function to get a particular product based on category/ID
+const particularProduct=async(req,res)=>{
+    try {
+        const product = await Product.findById(req.params.id);
+        if(!product)return res.status(404).json({message:"Product not found.", error});
+        res.status(200).json({message:"Product successfully gotten!", error})
+    } catch (error) {
+        res.status(500).json({message:"Internal Server Error", error})
+    }
+}
 
 // Function to delete a product from database
 const deleteProducts = async(req, res)=>{
@@ -49,4 +58,4 @@ const deleteProducts = async(req, res)=>{
     }
 }
 // Function to update the product
-export {addProduct, getProduct, deleteProducts};
+export {addProduct, getProduct, deleteProducts, particularProduct};

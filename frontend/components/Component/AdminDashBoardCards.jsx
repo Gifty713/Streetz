@@ -1,21 +1,12 @@
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import {useEffect, useState} from "react";
+import { fetchProducts } from './FetchProducts';
 const AdminDashBoardCards = ({products}) =>{
     const [dataa, setDataa] = useState([]);
     useEffect(()=>{
-        const fetchProductss = async()=>{
-            try {
-                const response = await fetch("http://localhost:4000/api/v1/admin/getproducts");
-                const data = await response.json();
-                setDataa(data.products);
-            } catch (error) {
-                console.error("Error occured", error)
-            }
-        }
-        fetchProductss();
+        fetchProducts(setDataa);
     }, []);
-    
     return(
         <div>
            <p style={{fontSize:"2rem", marginTop:"10px", padding:"0px 20px", fontWeight:"600"}}>DashBoard </p>
