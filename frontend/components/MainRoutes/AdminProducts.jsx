@@ -24,9 +24,6 @@ const AdminProducts = ()=>{
             const response = await fetch(`http://localhost:4000/api/v1/admin/deleteproduct/${id}`,{
                 method: "DELETE"
             })
-            if(!response.ok){
-                throw new Error("Error occured while deleting.");
-            } 
             const data = await response.json();
             console.log(data.products.name, " deleted successfully");       
             fetchProductss();   
@@ -44,12 +41,12 @@ const AdminProducts = ()=>{
             {openPop && <AddProduct childOpenPop = {openPop} childSetOpenPop={setOpenPop} refreshPage={fetchProductss}/> }
             {dataa.map((eachData)=>{
                 return(
-                    <div className="product-cont" style={{display:"flex", padding:"10px 10px 10px 20px", justifyContent:"space-between", width:"74%", alignItems:"last baseline"}} key={eachData._id}>
+                    <div className="product-cont" style={{display:"flex",justifyContent:"space-between", width:"74%", alignItems:"last baseline", padding:"0px 0px 0px 30px"}} key={eachData._id}>
                         <div style={{width:"fit-content"}}>
                             <img src={eachData.image} width="100px"  height="100px" alt="clothes" />
                         </div>
-                        <div style={{width:"55%",}}>
-                            <p style={{fontSize:"1.4rem", marginBottom:"0px"}}>{eachData.name}</p>
+                        <div style={{width:"55%", height:"150px"}}>
+                            <p style={{fontSize:"1.25rem", marginBottom:"0px"}}>{eachData.name}</p>
                             <p style={{fontSize:"1.4rem", marginTop:"0px", fontWeight:"500", marginBottom:"0"}}>₦{eachData.price.toLocaleString("en-US")}</p>
                             <div style={{display:"flex", justifyContent:"space-between" ,width:"60%", margin:"0px 0 0 0"}}>
                                 <svg width="40px" height="40px" viewBox="0 0 24 24" fill="#0000FF" xmlns="http://www.w3.org/2000/svg" style={{backgroundColor:"#202020", padding:"7px", borderRadius:"8px"}}><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15.4998 5.49994L18.3282 8.32837M3 20.9997L3.04745 20.6675C3.21536 19.4922 3.29932 18.9045 3.49029 18.3558C3.65975 17.8689 3.89124 17.4059 4.17906 16.9783C4.50341 16.4963 4.92319 16.0765 5.76274 15.237L17.4107 3.58896C18.1918 2.80791 19.4581 2.80791 20.2392 3.58896C21.0202 4.37001 21.0202 5.63634 20.2392 6.41739L8.37744 18.2791C7.61579 19.0408 7.23497 19.4216 6.8012 19.7244C6.41618 19.9932 6.00093 20.2159 5.56398 20.3879C5.07171 20.5817 4.54375 20.6882 3.48793 20.9012L3 20.9997Z" stroke="#0000FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>

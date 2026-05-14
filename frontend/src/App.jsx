@@ -18,14 +18,16 @@ const App=()=>{
     return(
         <>
             {!isAdmin? <BottomNavUser/>: <BottomNavAdmin/> }
-            <Routes>
-                <Route path="/" element={<Home/>}></Route>
-                <Route path="/cart" element={<Cart/>}></Route>
-                <Route path="/shop" element={<Shop/>}></Route>
-                <Route path="/admin/dashboard" element={<AdminHome/>}></Route>
-                <Route path="/admin/orders" element={<AdminOrders/>}></Route>
-                <Route path="/admin/products" element={<AdminProducts/>}></Route>
-            </Routes>
+            <div style={{paddingBottom:"50px"}}>
+                <Routes>
+                    <Route path="/" element={<Home/>}></Route>
+                    <Route path="/cart" element={<Cart/>}></Route>
+                    <Route path="/shop" element={<Shop/>}></Route>
+                    <Route path="/admin/dashboard" element={<AdminHome/>}></Route>
+                    <Route path="/admin/orders" element={<AdminOrders/>}></Route>
+                    <Route path="/admin/products" element={<AdminProducts/>}></Route>
+                </Routes>
+            </div>
         </>
     )
 }

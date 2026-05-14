@@ -9,6 +9,7 @@ const ShopContent=()=>{
     const [showNav, setShowNav] = useState(false);
     // state to keep track of the category
     const [cat, setCat] = useState("");
+
     return(
         <div>
             <div style={{backgroundColor:"black"}}>
