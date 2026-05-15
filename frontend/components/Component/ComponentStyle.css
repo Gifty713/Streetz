@@ -26,19 +26,19 @@
 .home-clothes-displayed{
     display: flex;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 20px;
     margin: 20px 0px;
     justify-content: center;
 }
 .home-clothes-img{
-    width:100px;
+    min-width: 155px;
+    width: 35%;
     flex: 0 0 calc(40% );
     position: relative;
 }
 .home-clothes-img img{
     width: 100%;
 }
-
 
 /* Admin Styling */
 .input-bar-admin:focus{

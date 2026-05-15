@@ -40,8 +40,8 @@ const getProduct =async(req, res)=>{
 const particularProduct=async(req,res)=>{
     try {
         const product = await Product.findById(req.params.id);
-        if(!product)return res.status(404).json({message:"Product not found.", error});
-        res.status(200).json({message:"Product successfully gotten!", error})
+        if(!product)return res.status(404).json({message:"Product not found."});
+        res.status(200).json({message:"Product successfully gotten!", product})
     } catch (error) {
         res.status(500).json({message:"Internal Server Error", error})
     }
@@ -52,7 +52,7 @@ const deleteProducts = async(req, res)=>{
     try {
         const deletedPost = await Product.findByIdAndDelete(req.params.id);
         if(!deletedPost)return res.status(404).json({message:"Product not found."});
-        res.status(200).json({message:"Product deleted successfully", products});
+        res.status(200).json({message:"Product deleted successfully", deletedPost});
     } catch (error) {
         res.status(500).json({message:"Internal Server Error", error});
     }

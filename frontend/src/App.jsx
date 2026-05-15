@@ -5,6 +5,7 @@ import AdminHome from "../components/MainRoutes/AdminHome";
 import AdminOrders from "../components/MainRoutes/AdminOrders";
 import AdminProducts from "../components/MainRoutes/AdminProducts";
 import NotFound from "../components/Component/NotFound";
+import ProductDescription from "../components/Component/ProductDescription";
 import {BrowserRouter, Routes, Route, useLocation} from "react-router-dom"
 import {BottomNavAdmin, BottomNavUser} from "../components/UIComponents/BottomNav";
 import "./App.css";
@@ -27,6 +28,7 @@ const App=()=>{
                     <Route path="/admin/dashboard" element={<AdminHome/>}></Route>
                     <Route path="/admin/orders" element={<AdminOrders/>}></Route>
                     <Route path="/admin/products" element={<AdminProducts/>}></Route>
+                    <Route path="/products/:id" element={<ProductDescription/>}></Route>
                     <Route path="*" element={<NotFound/>}></Route>
                 </Routes>
             </div>
