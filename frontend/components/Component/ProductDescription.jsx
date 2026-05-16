@@ -24,15 +24,30 @@ const ProductDescription=()=>{
         }
         fetchOne()
     }, [])
+    // sizes variables
     const [size, setSize] = React.useState('');
     const sizeClothes = [12,14,16,18,20,22,24];
-
     const handleChangeSize = (event) => {
         setSize(event.target.value);
     };
-
+    // quantity variables
     const [quantity, setQuantity] = useState(1);
-
+    // Push to Cart function
+    let keys = [];
+    const handleAddCart=(id)=>{
+        const cartArray = JSON.parse(localStorage.getItem("productIds")) || [];
+        console.log(keys)
+        if (!keys.includes(id)){
+            cartArray.push({"productId":id, "number": 1});
+        }else{
+            const index = cartArray.findIndex(oneObj => oneObj.productId == id );
+            console.log(index)
+            cartArray[index].number += 1;
+        }
+        localStorage.setItem("productIds", JSON.stringify(cartArray));
+        keys = cartArray.map(key => key.productId);
+        console.log(cartArray);
+    }
     return(
         <div>
             <div style={{backgroundColor:"black", marginBottom:"25px"}}>
@@ -74,7 +89,7 @@ const ProductDescription=()=>{
                             <AddIcon />
                         </IconButton>
                     </div>
-                    <Link to="/cart"><div className="filter-bar" style={{color:"#fff", backgroundColor:"#000", width:"100%", textAlign:"center", padding:"7px", marginTop:"10px"}}><p>Add to Cart</p></div></Link>
+                    <div className="filter-bar" onClick={()=>{handleAddCart(oneProduct.product._id)}} style={{color:"#fff", backgroundColor:"#000", width:"100%", textAlign:"center", padding:"7px", marginTop:"10px"}}><p>Add to Cart</p></div>
                 </div>
             }
 
