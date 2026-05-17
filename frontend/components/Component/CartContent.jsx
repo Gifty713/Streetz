@@ -24,7 +24,7 @@ const CartContent=()=>{
         <div className="cart-cont" style={{padding:"0px 20px 20px 20px"}}>
             {cartDisplayed.map((cartItem)=>{
                 return(
-                    <div key={cartItem.productId} className="cart-item" style={{width:"80%", border:"1px solid magenta", display:"block", marginBottom:"15px"}} >
+                    <div key={cartItem.productId} className="cart-item" style={{width:"80%", display:"block", marginBottom:"15px"}} >
                         <div style={{display:"flex", justifyContent:"space-between", alignItems:"center"}}>
                             <div style={{width:"40%"}}>
                                 <img src={cartItem.image} width="120px" height="120px" alt="Image of product" />
@@ -44,6 +44,7 @@ const CartContent=()=>{
                                 </div>
                             </div>                           
                         </div>
+                        <p style={{margin:"0 0 0 auto", display:"block", width:"80px",}}><u>Remove</u></p>
                     </div>
                 )
             })}
