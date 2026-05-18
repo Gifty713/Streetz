@@ -14,7 +14,7 @@ const CartContent=()=>{
     }
     const handleDecrease=(id)=>{
         const index = cartDisplayed.findIndex(oneObj => oneObj.productId == id );
-        cartDisplayed[index].number += 1;
+        cartDisplayed[index].number -= 1;
         localStorage.setItem("productIds", JSON.stringify(cartDisplayed));   
         setWatcher(cartDisplayed[index].number)    
     }
@@ -34,11 +34,11 @@ const CartContent=()=>{
                                 <p style={{margin:"0 0 0px 0", color:"#808080", fontSize:"1rem"}}>Size: {cartItem.size}</p>
                                 <p style={{margin:"0 0 0 0", fontSize:"1.2rem", }}>₦{cartItem.price.toLocaleString("en-US")}.00</p>
                                 <div style={{ display: "flex", alignItems:"center", justifyContent:"space-between",width:"130px", border:"1px solid #BDBDBD"}}>
-                                    <IconButton onClick={() => cartItem.number > 1 && handleIncrease(cartItem.productId)}>
+                                    <IconButton onClick={() => cartItem.number > 1 && handleDecrease(cartItem.productId)}>
                                         <RemoveIcon />
                                     </IconButton>
                                     <span style={{fontSize:"1.2rem"}}>{cartItem.number}</span>
-                                    <IconButton onClick={()=>{handleDecrease(cartItem.productId)}}>
+                                    <IconButton onClick={()=>{handleIncrease(cartItem.productId)}}>
                                         <AddIcon />
                                     </IconButton>
                                 </div>
