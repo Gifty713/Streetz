@@ -4,10 +4,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import SearchIcon from '@mui/icons-material/Search';
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
 import StoreMallDirectoryOutlinedIcon from '@mui/icons-material/StoreMallDirectoryOutlined';
-
 import Paper from '@mui/material/Paper';
 import { NavLink, useLocation } from 'react-router-dom';
 
@@ -37,7 +35,6 @@ const BottomNavUser=()=>{
                 elevation={5}
                 >
                     <BottomNavigationAction label="Home" value="/" icon={<HomeOutlinedIcon />} component={NavLink} to="/" />
-                    <BottomNavigationAction label="Search" value="search" icon={<SearchIcon />} />
                     <BottomNavigationAction label="Shop" value="/shop" icon={<StoreMallDirectoryOutlinedIcon />} component={NavLink} to="/shop"/>
                     <BottomNavigationAction label="Cart" value="/cart" icon={<LocalGroceryStoreOutlinedIcon />} component={NavLink} to="/cart" />
                 </BottomNavigation>

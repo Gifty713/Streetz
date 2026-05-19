@@ -11,16 +11,13 @@ const ShopContent=()=>{
     const [cat, setCat] = useState("");
 
     return(
-        <div>
-            <div style={{backgroundColor:"black"}}>
-                <Nav/>
-            </div>
-            <p style={{textAlign:"center", fontSize:"1.5rem", fontWeight:"500"}}>Shop by Categories</p>
+        <div style={{margin:"-10px 0 0 0"}}>
+            <p style={{textAlign:"center", fontSize:"1.5rem", fontWeight:"500", }}>Shop by Categories</p>
             {showNav && <p style={{fontSize:"1.4rem", textAlign:"center", fontWeight:"500" }}>{cat}</p> }
             {showNav && <p style={{fontSize:"1.3rem", textAlign:"center", fontWeight:"500" }}><span onClick={()=>{setShowNav(false)}}>Products</span> {">"} {cat}</p> }      
             {!showNav && <ShopMain categories={categories} cat={cat} setCat={setCat} setShowNav={setShowNav} showNav={showNav}/>}
             {showNav && <PullProducts cat={cat}/> }  
-            <Footer/>    
+            {/* <Footer/>     */}
         </div>
     )
 }

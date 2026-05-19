@@ -25,7 +25,7 @@ const Breif =()=>{
                     )
                 })}   
             </div>
-            <Link to="/shop"><div className="filter-bar" style={{color:"#fff", backgroundColor:"#000", width:"100%", textAlign:"center", padding:"7px", marginTop:"10px"}}><p>SEE MORE</p></div></Link>
+            <Link to="/shop"><div className="filter-bar" style={{color:"#fff", backgroundColor:"#000", display:"block", margin:"0 auto",width:"70%", height:"60px", textAlign:"center", padding:"7px", marginTop:"10px", borderRadius:"10px"}}><p style={{marginTop:"10px"}}>SEE MORE</p></div></Link>
             <Footer/>
         </div>
     )

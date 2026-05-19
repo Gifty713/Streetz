@@ -2,8 +2,10 @@ import "./ComponentStyle.css";
 import Nav from "./Nav.jsx";
 const Hero=()=>{
     return(
-        <div className="hero-cont">
+        <div >
             <Nav/>
+            <div className="hero-cont">
+            </div>
         </div>
     )
 }

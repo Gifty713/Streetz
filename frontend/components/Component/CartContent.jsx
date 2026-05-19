@@ -67,10 +67,10 @@ const CartContent=()=>{
                     </div>
                 )
             })}
-            <div style={{backgroundColor:"#F7F7F7", height:"125px",position: 'fixed', bottom: "60px", left: "0px", right: "0px", zIndex:"1000", padding:"5px 20px 0px 20px", }}>
-                <div style={{display:"flex", justifyContent:"space-between", margin:"0px"}}>
+            <div style={{backgroundColor:"#F7F7F7", height:"130px",position: 'fixed', bottom: "60px", left: "0px", right: "0px", zIndex:"1000", padding:"5px 20px 0px 20px", }}>
+                <div style={{display:"flex", justifyContent:"space-between", margin:"0px", alignItems:"last baseline"}}>
                     <p style={{fontSize:"1.1rem", fontWeight:"600"}}>SubTotal</p>
-                    <p>{total}</p>
+                    <p style={{fontSize:"1.2rem", fontWeight:"500"}}>₦{total.toLocaleString("en-US")}.00</p>
                 </div>
                 <div className="filter-bar" style={{color:"#fff", backgroundColor:"#000", width:"100%", height:"50px", textAlign:"center", padding:"7px", marginBottom:"10px", borderRadius:"6px"}}><p style={{margin:"5px 0 0 0"}}>Check out</p></div>                   
             </div>
