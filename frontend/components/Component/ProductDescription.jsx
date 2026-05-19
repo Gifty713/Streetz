@@ -51,7 +51,6 @@ const ProductDescription=()=>{
     // Initial push to cart function
     const handleInitialCart=(id)=>{
         const cartArray = JSON.parse(localStorage.getItem("productIds")) || [];
-        console.log(oneProduct)
         cartArray.push({"productId":id, "number": quantity, "name":oneProduct.product.name, "size":size, "price":oneProduct.product.price, "image":oneProduct.product.image});
         localStorage.setItem("productIds", JSON.stringify(cartArray));
         setHandled(true);
