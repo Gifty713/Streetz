@@ -2,8 +2,8 @@ import Hamburger from "../UIComponents/Hamburger.jsx";
 import "./ComponentStyle.css";
 const Nav=()=>{
     return(
-        <div style={{height:"60px"}}>
-            <div className="nav-cont" style={{width:"100%", height:"55px", display:"flex", justifyContent:"space-between",padding:"0px 5px 0px 20px" , alignItems:"last baseline", backgroundColor:"#fff", position:"fixed" }}>
+        <div style={{height:"60px", boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px", zIndex:"1000"}}>
+            <div className="nav-cont" style={{width:"100%", height:"55px", display:"flex", justifyContent:"space-between",padding:"0px 5px 0px 20px" , alignItems:"last baseline", backgroundColor:"#fff", position:"fixed", zIndex:"1000" }}>
                 <div style={{display:"flex", alignItems:"center",}}>
                     <div className="logo"><img src="/logo2(1).png" alt="logo of streetz" width="85px" /></div>
                     <p className="company-name">Streetz</p>

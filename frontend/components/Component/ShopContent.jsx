@@ -12,9 +12,9 @@ const ShopContent=()=>{
 
     return(
         <div style={{margin:"-10px 0 0 0"}}>
-            <p style={{textAlign:"center", fontSize:"1.5rem", fontWeight:"500", }}>Shop by Categories</p>
-            {showNav && <p style={{fontSize:"1.4rem", textAlign:"center", fontWeight:"500" }}>{cat}</p> }
-            {showNav && <p style={{fontSize:"1.3rem", textAlign:"center", fontWeight:"500" }}><span onClick={()=>{setShowNav(false)}}>Products</span> {">"} {cat}</p> }      
+            {!showNav && <p style={{textAlign:"center", fontSize:"1.5rem", fontWeight:"500", }}>Shop by Categories</p>}
+            {showNav && <p style={{fontSize:"1.5rem", textAlign:"center", fontWeight:"500", margin:"5px 0 0 0" }}>{cat}</p> }
+            {showNav && <p style={{fontSize:"1.4rem", textAlign:"center", fontWeight:"500", margin:"20px 0 25px 0" }}><span onClick={()=>{setShowNav(false)}}>Products</span> {">"} {cat}</p> }      
             {!showNav && <ShopMain categories={categories} cat={cat} setCat={setCat} setShowNav={setShowNav} showNav={showNav}/>}
             {showNav && <PullProducts cat={cat}/> }  
             {/* <Footer/>     */}

@@ -70,7 +70,6 @@ const BottomNavAdmin=()=>{
                 >
                     <BottomNavigationAction label="DashBoard" value="/admin/dashboard" icon={<HomeOutlinedIcon />} component={NavLink} to="/admin/dashboard" />
                     <BottomNavigationAction label="Products" value="/admin/products" icon={<StoreMallDirectoryOutlinedIcon />} component={NavLink} to="/admin/products"/>
-                    <BottomNavigationAction label="Orders" value="/admin/orders" icon={<LocalGroceryStoreOutlinedIcon />} component={NavLink} to="/admin/orders" />
                 </BottomNavigation>
             </Paper>
         </Box>
