@@ -20,7 +20,8 @@ const Hero=()=>{
                     delay: 2500, 
                     disableOnInteraction: false, 
                 }}
-                loop={true} 
+                
+                loop={products.length > 0} 
                 >                
                     <SwiperSlide><img src="/bg_mobilee.png" alt="Image of swiped product" style={{height:"55vh", width:"100%"}}/></SwiperSlide>
                     {products.slice(1, 4).map((product)=>{
