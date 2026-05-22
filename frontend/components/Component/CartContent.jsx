@@ -2,6 +2,9 @@ import IconButton from "@mui/material/IconButton";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { useEffect, useState } from "react";
+import Alert from '@mui/material/Alert';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 const CartContent=()=>{
     const cartDisplayed = JSON.parse(localStorage.getItem("productIds"))|| [];
     // watches the change in value
@@ -39,6 +42,12 @@ const CartContent=()=>{
     }
     // refreshes on change of watcher
     useEffect(()=>{getSubtotal()}, [watcher]);
+
+    // check out loader states functions
+    const [open, setOpen] = useState(false);
+    const handleClose = () => {setOpen(false)};
+    const handleOpen = () => {setOpen(true)};
+    
     return(
         <div className="cart-cont" style={{padding:"0px 20px 20px 20px", position:"relative"}}>
             {cartDisplayed.map((cartItem)=>{
@@ -72,7 +81,18 @@ const CartContent=()=>{
                     <p style={{fontSize:"1.1rem", fontWeight:"600"}}>SubTotal</p>
                     <p style={{fontSize:"1.2rem", fontWeight:"500"}}>₦{total.toLocaleString("en-US")}.00</p>
                 </div>
-                <div className="filter-bar" style={{color:"#fff", backgroundColor:"#000", width:"100%", height:"50px", textAlign:"center", padding:"7px", marginBottom:"10px", borderRadius:"6px"}}><p style={{margin:"5px 0 0 0"}}>Check out</p></div>                   
+                <div>
+                    <div className="filter-bar" style={{color:"#fff", backgroundColor:"#000", width:"100%", height:"50px", textAlign:"center", padding:"7px", marginBottom:"10px", borderRadius:"6px"}}  onClick={handleOpen}>
+                        <p style={{margin:"5px 0 0 0"}}>Check out</p>
+                    </div>                   
+                    <Backdrop
+                        sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
+                        open={open}
+                        onClick={handleClose}
+                    >
+                        <Alert severity="info">Check Out not available now.</Alert>
+                    </Backdrop>    
+                    </div>
             </div>
         </div>
     )

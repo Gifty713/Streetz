@@ -3,19 +3,21 @@ import BasicNav from "../UIComponents/BasicNav.jsx"
 import Button from "@mui/material/Button"
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
+import CircularProgress from '@mui/material/CircularProgress';
 import { FormControl, FormLabel, RadioGroup, FormControlLabel, Radio } from '@mui/material';
 const AddProduct = ({childOpenPop, childSetOpenPop, refreshPage}) =>{
-    // state for radio buttons
+    // state for radio buttons and loading
     const [category, setCategory] = useState('');
+    const [loading, setLoading] = useState(false);
     const handleChange = (event) => {
         setCategory(event.target.value);
     };
-
     const handleSubmit= async(e)=>{
         e.preventDefault()
         try {
             const formData = new FormData(e.target);
             formData.append("category", category);
+            setLoading(true);
             const respond = await fetch("http://localhost:4000/api/v1/admin/addproduct", {
                 method:"POST",
                 body: formData
@@ -61,7 +63,11 @@ const AddProduct = ({childOpenPop, childSetOpenPop, refreshPage}) =>{
                         <p style={{fontSize:"1.4rem", fontWeight:"600", margin:"0 0 12px 0"}}>Image</p>
                         <input type="file" name="image" style={{height:"30px", fontSize:"1.2rem", marginBottom:"25px"}} autoComplete="off"/>
                     </label>
-                    <button type="submit" style={{display:"block", backgroundColor:"black", color:"white", width:"90%", height:"50px", margin:"0 auto" ,fontSize:"1.5rem"  ,padding:"10px", borderRadius:"10px"}}>Save</button>  
+                    <button type="submit" style={{display:"block", backgroundColor:"black", color:"white", width:"90%", height:"50px", margin:"0 auto" ,fontSize:"1.5rem"  ,padding:"10px", borderRadius:"10px"}}>
+                        {loading ?             
+                        <CircularProgress color="inherit" size={25} aria-label="Loading…" sx={{display:"block", margin:"0 auto"}} />
+                        : "Save"}
+                    </button>  
                 </form>         
             </Paper>
         </Box>
