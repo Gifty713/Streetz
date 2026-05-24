@@ -1,7 +1,7 @@
 import Reviews from "./Reviews";
 const Footer=()=>{
     return(
-        <div style={{fontSize:"1.5rem", padding:"10px 0px", width:"100%"}}>
+        <div style={{fontSize:"1.5rem", padding:"10px 0px", marginTop:"10px", width:"100%"}}>
             <Reviews/>
             <footer style={{background:"#111", color:"#fff", padding:"10px 20px 20px 20px"}}>
                 
