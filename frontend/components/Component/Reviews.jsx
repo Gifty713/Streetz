@@ -14,7 +14,7 @@ const Reviews = ()=>{
           Testimonials
         </p>
 
-        <p style={{color: "#555",maxWidth: "600px",margin: "15px auto 0",lineHeight: "1.7",fontSize: "1rem",}}>
+        <p style={{color: "#555",maxWidth: "600px",margin: "15px auto -20px",lineHeight: "1.7",fontSize: "1rem",}}>
           Real feedback from people rocking our streetwear every day.
         </p>
       </div>

@@ -8,7 +8,7 @@ const Footer=()=>{
                 <div style={{display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(220px, 1fr))", gap:"40px", marginBottom:"40px"}}>
 
                     <div>
-                        <h2 style={{marginBottom:"15px", fontSize:"1.8rem", letterSpacing:"2px"}}>Streetz</h2>
+                        <h2 className="company-name">Streetz</h2>
                         <p style={{color:"#bbb", lineHeight:"1.8", fontSize:"0.95rem"}}>Modern streetwear built for confidence, comfort, and everyday style.</p>
                     </div>
 

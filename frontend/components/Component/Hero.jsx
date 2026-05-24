@@ -16,11 +16,7 @@ const Hero=()=>{
             <div className="hero-cont">
                 <Swiper
                 modules={[Autoplay]}
-                autoplay={{
-                    delay: 2500, 
-                    disableOnInteraction: false, 
-                }}
-                
+                autoplay={{delay: 2000, disableOnInteraction: false, }}
                 loop={products.length > 0} 
                 >                
                     <SwiperSlide><img src="/bg_mobilee.png" alt="Image of swiped product" style={{height:"55vh", width:"100%"}}/></SwiperSlide>
