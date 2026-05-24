@@ -1,6 +1,8 @@
+import Reviews from "./Reviews";
 const Footer=()=>{
     return(
         <div style={{fontSize:"1.5rem", padding:"20px 10px"}}>
+            <Reviews/>
             FOOTER
         </div>
     )
