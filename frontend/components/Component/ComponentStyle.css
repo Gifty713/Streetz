@@ -31,10 +31,12 @@
 }
 .home-clothes-img{
     min-width: 160px;
-    flex: 0 0 calc(40% );
+    flex: 0 0 calc(40%);
     position: relative;
 }
-
+.home-clothes-img img{
+    width:160px;
+}
 /* Admin Styling */
 .input-bar-admin:focus{
     outline: none;

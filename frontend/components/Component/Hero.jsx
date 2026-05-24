@@ -24,7 +24,7 @@ const Hero=()=>{
                 loop={products.length > 0} 
                 >                
                     <SwiperSlide><img src="/bg_mobilee.png" alt="Image of swiped product" style={{height:"55vh", width:"100%"}}/></SwiperSlide>
-                    {products.slice(1, 4).map((product)=>{
+                    {products.slice(0, 3).map((product)=>{
                         return(
                             <SwiperSlide><img src={product.image} alt="Image of swiped product" style={{height:"55vh", width:"100%"}}/></SwiperSlide>                      
                         )
