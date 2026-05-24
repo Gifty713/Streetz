@@ -10,7 +10,7 @@ const Breif =()=>{
         fetchProducts(setProduct);
     }, [])
     return(
-        <div style={{position:"relative", width:"100%", zIndex:"3", padding:"0px 0px 0px 12px"}}>
+        <div style={{position:"relative", width:"100%", zIndex:"3", padding:"0px 0px 0px 0px"}}>
             <p style={{padding:"0px 0px 0px 13px", fontSize:"1.5rem", fontWeight:"400", letterSpacing:"1px", fontFamily: "Boldonse, system-ui"}}>Best Sellers</p>     
             {product.length === 0? 
             <div className="home-clothes-displayed">

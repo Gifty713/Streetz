@@ -8,9 +8,9 @@ const Reviews = ()=>{
         {name:"Praise Effiong",review:"I was honestly skeptical at first, but after my first order I understood the hype. The packaging was clean, delivery was smooth, and the quality exceeded my expectations."}
     ]
     return(
-     <div style={{padding: "20px 20px"}}>
+     <div style={{padding: "20px 20px", backgroundColor: "#f8f8f8"}}>
       <div style={{ textAlign: "center", marginBottom: "50px" }}>
-        <p style={{fontSize: "0.9rem",fontWeight: "700",letterSpacing: "3px",textTransform: "uppercase",color: "#777",marginBottom: "10px",}}>
+        <p style={{fontSize: "0.9rem",fontWeight: "700",letterSpacing: "3px",textTransform: "uppercase",color: "#000",marginBottom: "10px",}}>
           Testimonials
         </p>
 
