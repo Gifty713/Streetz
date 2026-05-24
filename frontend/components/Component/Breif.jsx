@@ -4,6 +4,8 @@ import Skeleton from '@mui/material/Skeleton';
 import "./ComponentStyle.css";
 import { fetchProducts } from "./FetchProducts";
 import Footer from "./Footer";
+import AdminLogin from "./AdminLogin";
+import AdminRegister from "./AdminRegister";
 const Breif =()=>{
     const [product, setProduct] = useState([]);
     useEffect(()=>{
