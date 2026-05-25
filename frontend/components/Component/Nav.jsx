@@ -3,6 +3,7 @@ import "./ComponentStyle.css";
 const Nav=()=>{
     const cartArray = JSON.parse(localStorage.getItem("productIds"));
     const cartNum = cartArray.length;
+    const screenWidth = window.innerWidth
     return(
         <div style={{height:"60px", boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px", zIndex:"1000"}}>
             <div className="nav-cont" style={{width:"100%", height:"55px", display:"flex", justifyContent:"space-between",padding:"0px 5px 0px 20px" , alignItems:"last baseline", backgroundColor:"#fff", position:"fixed", zIndex:"1000" }}>

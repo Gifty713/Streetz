@@ -11,13 +11,14 @@ const Breif =()=>{
     useEffect(()=>{
         fetchProducts(setProduct);
     }, [])
+    const screenWidth = window.innerWidth
     return(
         <div style={{position:"relative", width:"100%", zIndex:"3", padding:"0px 0px 0px 0px"}}>
             <p style={{padding:"0px 0px 0px 13px", fontSize:"1.5rem", fontWeight:"400", letterSpacing:"1px", fontFamily: "Boldonse, system-ui"}}>Best Sellers</p>     
             {product.length === 0? 
             <div className="home-clothes-displayed">
                 {
-                    [...Array(4)].map((item,index)=>{
+                    [...Array(screenWidth> 850 ? 8 : 4)].map((item,index)=>{
                         return(
                             <div className="home-clothes-img" key={index}>
                                 <Skeleton variant="rectangular" width={"100%"} height={"185px"} animation="wave" />

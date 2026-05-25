@@ -17,9 +17,14 @@ const App=()=>{
     // determine whether in admin page 
     const location = useLocation();
     const isAdmin = location.pathname.startsWith("/admin");
+    const screenWidth = window.innerWidth
     return(
         <>
-            {!isAdmin? <BottomNavUser/>: <BottomNavAdmin/> }
+            {screenWidth <= 850 && (
+                <div>
+                    {!isAdmin ? <BottomNavUser /> : <BottomNavAdmin />}
+                </div>
+            )}
             <div style={{paddingBottom:"50px"}}>
                 <Routes>
                     <Route path="/" element={<Home/>}></Route>
