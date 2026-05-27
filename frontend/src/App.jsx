@@ -25,7 +25,7 @@ const App=()=>{
                     {!isAdmin ? <BottomNavUser /> : <BottomNavAdmin />}
                 </div>
             )}
-            <div style={{paddingBottom:"50px"}}>
+            <div className="app-cont">
                 <Routes>
                     <Route path="/" element={<Home/>}></Route>
                     <Route path="/cart" element={<Cart/>}></Route>

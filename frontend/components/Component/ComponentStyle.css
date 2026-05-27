@@ -1,3 +1,6 @@
+.app-cont{
+    padding-bottom: 50px;
+}
 /* Nav Design */
 @font-face {
     font-family:"Gunko";
@@ -17,7 +20,6 @@
 
 /* Hero */
 .hero-cont{
-    /* background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(/bg_mobilee.png) no-repeat center center/cover ; */
     width: 100%;
     height: 55vh;
 }
@@ -148,6 +150,13 @@
 .avatar-p{
     margin-left: 12px 
 }
+/* Footer */
+.footer-cont{
+    font-size:1.5rem;
+    padding:10px 0px;
+    margin-top:10px;
+    width:100%
+}
 /* Admin Styling */
 .input-bar-admin:focus{
     outline: none;
@@ -158,6 +167,9 @@
 
 /* Media query for laptop */
 @media screen and (min-width: 850px ){
+    .app-cont{
+        padding-bottom: 0;
+    }
     /* Hero Page */
     .hero-cont{
         height: 80vh;
@@ -225,5 +237,9 @@
         gap: 50px;
         width: 83%;
         margin: 0 auto;
+    }
+    /* Footer */
+    .footer-cont{
+        padding:10px 0px 0px 0px;
     }
 }
