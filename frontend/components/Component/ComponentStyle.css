@@ -41,7 +41,35 @@
     height:55vh; 
     width:100%;
 }
-
+/* Breif Styling */
+.breif-cont{
+    position:relative;
+    width:100%;
+    z-index:3;
+    padding:0px 0px 0px 0px;
+}
+.breif-heading{
+    padding:0px 0px 0px 13px;
+    font-size:1.5rem;
+    font-weight:400;
+    letter-spacing:1px;
+    font-family: Boldonse, "system-ui";
+}
+.more-bar{
+    color:#fff;
+    background-color:#000;
+    display:block;
+    margin:0 auto;
+    width:70%;
+    height:60px;
+    text-align:center;
+    padding:7px;
+    margin-top:10px;
+    border-radius:10px
+}
+.more-bar p{
+    margin-top:10px
+}
 /* Admin Styling */
 .input-bar-admin:focus{
     outline: none;
@@ -50,11 +78,33 @@
     color:rgb(95, 94, 94)
 }
 
+.cart-svg-img{
+    background-color:#000;
+    padding:10px;
+    border-radius:50%;
+    position:absolute;
+    top:50%;
+    left:68%;
+}
+.product-name-breif{
+    margin:0px 0px 0px 0px;
+    font-weight:500;
+    font-size:1.2rem
+}
+.product-price-breif{
+    margin:0px 0px 0px 0px;
+    font-size:1.3rem;
+    letter-spacing:0.7px
+}
 /* Media query for laptop */
 @media screen and (min-width: 850px ){
     /* Hero Page */
     .hero-cont{
         height: 80vh;
+        width: 80%;
+        display: block;
+        margin: 10px auto 0 auto;
+
     }
 
     .sliding-images{
@@ -65,20 +115,48 @@
         object-fit: contain;
         object-position: top;
     }
+    /* Breif */
+    .breif-cont{
+        display: block;
+        width: 90%;
+        margin:-10px auto 0 auto;
+        
+    }
     .home-clothes-displayed{
         display: flex;
+        width:100%;
         flex-wrap: wrap;
-        /* gap: 20px; */
+        gap: 10px;
         margin: -10px 0px 20px 0px;
         justify-content:center;
     }
     .home-clothes-img{
-        min-width: 400px;
-        flex: 0 0 calc(50%);
+        min-width: 250px;
+        font-size: 0.9rem;
+        flex: 0 0 calc(20%);
         position: relative;
+        display: block;
+        margin-bottom: 5px;
     }
     .home-clothes-img img{
-        width:400px;
         object-fit: contain;
+    }
+    .cart-svg-img{
+        left:45%;
+
+    }
+    .product-name-breif{
+        font-size:1rem
+    }
+    .product-price-breif{
+        font-size:0.9rem;
+    }
+    .more-bar{
+        width:250px;
+        height:50px;
+        border-radius:18px
+    }
+    .more-bar p{
+        margin-top:13px
     }
 }
