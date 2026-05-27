@@ -8,39 +8,38 @@ const Reviews = ()=>{
         {name:"Praise Effiong",review:"I was honestly skeptical at first, but after my first order I understood the hype. The packaging was clean, delivery was smooth, and the quality exceeded my expectations."}
     ]
     return(
-     <div style={{padding: "10px 20px 25px 20px", backgroundColor: "#f8f8f8"}}>
-      <div style={{ textAlign: "center", marginBottom: "50px" }}>
-        <p style={{fontSize: "0.9rem",fontWeight: "700",letterSpacing: "3px",textTransform: "uppercase",color: "#000",marginBottom: "10px",}}>
+     <div className="review-cont">
+      <div className="review-header-cont" >
+        <p className="testimonial-header">
           Testimonials
         </p>
 
-        <p style={{color: "#555",maxWidth: "600px",margin: "15px auto -20px",lineHeight: "1.7",fontSize: "1rem",}}>
+        <p className="header-2">
           Real feedback from people rocking our streetwear every day.
         </p>
       </div>
 
-      <div style={{display: "grid",gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",gap: "25px",}}>
+      <div className="testimonials-cont">
         {reviews.map((eachReview, id) => {
           return (
             <div
               key={id}
-              style={{background: "#fff",padding: "25px",borderRadius: "18px",boxShadow: "0 8px 25px rgba(0,0,0,0.08)",transition: "0.3s ease",cursor: "pointer",}}
+              className="main-testimonial"
             >
-              <div style={{display: "flex",marginBottom: "15px",color: "#ffb400",}}
-              >
+              <div className="star-cont" >
                 {[...Array(5)].map((_, index) => (
                   <StarIcon key={index} sx={{ fontSize: "20px" }} />
                 ))}
               </div>
-              <p style={{color: "#444",lineHeight: "1.8",fontSize: "0.98rem",marginBottom: "25px",}}>
+              <p className="review">
                 "{eachReview.review}"
               </p>
-              <div style={{display: "flex",alignItems: "center",}}>
-                <Avatar sx={{backgroundColor: "#111",width: 45,height: 45,fontWeight: "700",}}>
+              <div className="avatar-cont">
+                <Avatar className="avatar" sx={{backgroundColor: "#111",width: 45,height: 45,fontWeight: "700",}}>
                   {eachReview.name.slice(0, 1)}
                 </Avatar>
 
-                <div style={{ marginLeft: "12px" }}>
+                <div className="avatar-p">
                   <p style={{margin: 0,fontWeight: "700",fontSize: "1rem",}}>{eachReview.name}</p>
                 </div>
               </div>
