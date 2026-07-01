@@ -1,17 +1,31 @@
 import Nav from "./Nav";
+import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom"
 const ShopMain=({categories,cat, setCat, setShowNav, showNav})=>{
+    // To be able to navigate back to Category without route /shop/category
+    const {state} = useLocation() || "";
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (state){
+            const categoryy = state.fromDesc.category;
+            setCat(categoryy);
+            setShowNav(true);    
+            console.log(categoryy);
+        }
+        navigate(location.pathname, { replace: true, state: null });
+    }, [state, navigate]);
     return(
         <div>
-            <div className="home-clothes-displayed">
+            <div className="home-clothes-displayed-shop">
                 {categories.map((category, id)=>{
                     return(
-                        <div className="home-clothes-img" key={id} onClick={()=>{
+                        <div className="home-clothes-img-shop" key={id} onClick={()=>{
                             setCat(category.names);
                             setShowNav(true);
                         }} >
-                            <img src={category.images} style={{width:"100%", height:"185px", objectFit: "cover", zIndex:"3", margin:"0 0", boxShadow:"rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}} alt="image of category"/>
-                            <p style={{fontSize:"1.5rem", margin:"0 0", fontWeight:"500", fontFamily: "Roboto, sans-serif"}}>{category.names}</p>
-                        </div>
+                            <img className="shop-main-img" src={category.images} alt="image of category" />
+                            <p className="shop-main-p">{category.names}</p>
+                        </div>                        
                     )
                 })}
             </div>

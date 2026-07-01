@@ -6,6 +6,7 @@ import AdminOrders from "../components/MainRoutes/AdminOrders";
 import AdminProducts from "../components/MainRoutes/AdminProducts";
 import NotFound from "../components/Component/NotFound";
 import ProductDescription from "../components/Component/ProductDescription";
+import ShopMain from "../components/Component/ShopMain";
 import {BrowserRouter, Routes, Route, useLocation} from "react-router-dom"
 import {BottomNavAdmin, BottomNavUser} from "../components/UIComponents/BottomNav";
 import "./App.css";
@@ -18,6 +19,7 @@ const App=()=>{
     const location = useLocation();
     const isAdmin = location.pathname.startsWith("/admin");
     const screenWidth = window.innerWidth
+
     return(
         <>
             {screenWidth <= 850 && (

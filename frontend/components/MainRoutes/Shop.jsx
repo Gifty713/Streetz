@@ -4,8 +4,10 @@ const Shop=()=>{
     return(
         <div>
             <Nav/>
-           <p style={{fontSize:"2rem", marginTop:"10px", padding:"0px 20px 0px 20px", fontWeight:"400", marginBottom:"0", fontFamily:"Boldonse, system-ui"}}>Shop</p>
-            <ShopContent/>
+            <div className="shop-cont">
+                <p className="shop-main-title">Shop</p>
+                <ShopContent/>
+            </div>
         </div>
     )
 }

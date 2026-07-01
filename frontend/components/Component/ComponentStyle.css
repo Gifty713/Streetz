@@ -188,6 +188,79 @@
 .avatar-p{
     margin-left: 12px 
 }
+/* Shop */
+.shop-cont{
+    padding: 0;
+}
+.shop-main-title{
+    font-size:2rem;
+    margin-top:10px;
+    padding:0px 20px 0px 20px;
+    font-weight:400;
+    margin-bottom:0;
+    font-family:Boldonse, system-ui
+}
+.shop-name{
+    text-align:center;
+    font-size:1.5rem;
+    font-weight:500;
+}
+.shop-category{
+    font-size:1.5rem;
+    text-align:center;
+    font-weight:500;
+    margin:5px 0 0 0 
+}
+.shop-direction{
+    font-size:1.4rem;
+    text-align:center;
+    font-weight:500;
+    margin:20px 0 25px 0 
+}
+    /* Shop Main */
+.home-clothes-displayed-shop{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: -10px 0px 20px 0px;
+    justify-content:center;
+}
+.home-clothes-img-shop{
+    min-width: 160px;
+    flex: 0 0 calc(40%);
+    position: relative;
+}
+.home-clothes-img-shop img{
+    width:160px;
+}
+.shop-main-img{
+    width:100%;
+    height:185px;
+    object-fit: cover;
+    z-index:3;
+    margin:0 0;
+    box-shadow:rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px
+}    
+.shop-main-p{
+    font-size:1.5rem;
+    margin:0 0;
+    font-weight:500;
+    font-family: Roboto, sans-serif
+}
+    /* Pull Product */
+.pull-product-img{
+    width:100%;
+    max-width:165px;
+    height:185px;
+    object-fit: cover;
+    z-index:3;
+    box-shadow:rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px 
+}
+.pull-product-p{
+    margin:0px 0px 0px 0px;
+    font-size:1.3rem;
+    letter-spacing:0.7px
+}
 /* Footer */
 .footer-cont{
     font-size:1.5rem;
@@ -210,7 +283,6 @@
     margin:0 auto;
     position:relative
 }
-
 .prod-desc-img{
     height:50vh;
     width:100%;
@@ -221,6 +293,13 @@
     font-size:1.5rem;
     font-weight:500;
     margin:10px 0 0 0
+}
+.prod-desc-arrow{
+    border:1px solid black;
+    border-radius: 50%;
+    padding:5px;
+    margin-left:30px;
+    cursor:pointer
 }
 /* Media query for laptop */
 @media screen and (min-width: 850px ){
@@ -311,8 +390,7 @@
     .breif-cont{
         display: block;
         width: 90%;
-        margin:-10px auto 0 auto;
-        
+        margin:-10px auto 0 auto; 
     }
     .home-clothes-displayed{
         display: flex;
@@ -335,7 +413,7 @@
     }
     .cart-svg-img{
         left:45%;
-
+        top: 55%;
     }
     .product-name-breif{
         font-size:1rem
@@ -362,17 +440,88 @@
     .footer-cont{
         padding:10px 0px 0px 0px;
     }
+    
+    /* Shop */
+    .shop-cont{
+        width:90%;
+        margin: 0 auto;
+    }
+    .shop-main-title{
+        padding-left:50px;
+    }
+    .shop-name{
+        font-size: 1.8rem;
+        margin-top: 8px;
+    }
+        /* Shop Main */
+    .home-clothes-displayed-shop{
+        width: 90%;
+        margin: -10px auto 20px auto;
+    }
+    .home-clothes-img-shop{
+        min-width: 0px;
+        cursor: pointer;
+    }
+    .home-clothes-img-shop img{
+        width: 100%;
+        height: 400px;
+    }
+    .shop-main-img{
+        margin:10px 0 7px 0;
+        transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
+        transform: scale(1);
+        will-change: transform;
+    }    
+    .shop-main-img:hover{
+        transform: scale(1.05);
+    }
+        /* Pull Product */
+    .shop-category{
+        font-size: 1.8rem;
+        margin:-10px 0 0 0 
+    }
+    .shop-direction{
+        font-size: 1rem;
+        margin:10px 0 25px 0 
+    }
+    .pull-product-img{
+        max-width:400px;
+        height:185px;
+    }
+    .pull-product-p{
+        font-size:1.2rem;
+        letter-spacing: -0.2px;
+    }
     /* Product Description */
+    .shop-direction-products{
+        cursor: pointer;
+    }
+    .shop-direction-products:hover{
+        color: #444;
+    }
     .prod-desc-cont{
         width: 85%;
         display: grid;
         grid-template-columns: repeat(auto-fit,minmax(500px,1fr));
-
+        align-items: center;
     }
     .prod-desc-img-cont{
         width: 90%;
     }
+    .prod-desc-img{
+        height: 70vh;
+    }
     .prod-desc-content-cont{
         width: 70%;;
-    }   
+    }  
+    .prod-desc-arrow{
+        margin-left:50px;
+        cursor:pointer;
+    }
+    .prod-desc-arrow:hover{
+        fill:#444;
+        border:1px solid #444;
+    }
 }

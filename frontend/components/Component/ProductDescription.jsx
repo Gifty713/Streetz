@@ -82,12 +82,19 @@ const ProductDescription=()=>{
             <div style={{marginBottom:"25px"}}>
                 <Nav/>
             </div>
+            <Link to={"/shop"}
+                state={{fromDesc: oneProduct.product}}
+            >
+
+                <svg width="40px" height="40px" className="prod-desc-arrow" viewBox="0 0 200 200" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><title></title><path d="M160,89.75H56l53-53a9.67,9.67,0,0,0,0-14,9.67,9.67,0,0,0-14,0l-56,56a30.18,30.18,0,0,0-8.5,18.5c0,1-.5,1.5-.5,2.5a6.34,6.34,0,0,0,.5,3,31.47,31.47,0,0,0,8.5,18.5l56,56a9.9,9.9,0,0,0,14-14l-52.5-53.5H160a10,10,0,0,0,0-20Z"></path></g></svg>
+            </Link>
             {
                 oneProduct &&
                 <div className="prod-desc-cont">
                     <div className="prod-desc-img-cont">
                         <img className="prod-desc-img" src={oneProduct.product.image} alt="image of product"/>
                     </div>
+
                     <div className="prod-desc-content-cont">
                         <p className="prod-desc-name">{oneProduct.product.name}</p>
                         <p style={{fontSize:"1.3rem", margin:"10px 0 10px 0px"}}>₦{oneProduct.product.price.toLocaleString("en-US")}.00</p>
