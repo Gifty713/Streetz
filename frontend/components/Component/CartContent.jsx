@@ -49,11 +49,11 @@ const CartContent=()=>{
     const handleOpen = () => {setOpen(true)};
     
     return(
-        <div className="cart-cont" style={{padding:"0px 20px 20px 20px", position:"relative"}}>
+        <div className="cart-cont">
             {cartDisplayed.map((cartItem)=>{
                 return(
-                    <div key={cartItem.productId} className="cart-item" style={{width:"80%", display:"block", marginBottom:"15px"}} >
-                        <div style={{display:"flex", justifyContent:"space-between", alignItems:"center"}}>
+                    <div key={cartItem.productId} className="cart-item-cont" >
+                        <div className="cart-item" >
                             <div style={{width:"40%"}}>
                                 <img src={cartItem.image} width="120px" height="120px" alt="Image of product" />
                             </div>
@@ -72,27 +72,29 @@ const CartContent=()=>{
                                 </div>
                             </div>                           
                         </div>
-                        <p style={{margin:"0 0 0 auto", display:"block", width:"80px",}} onClick={()=>{removeProduct(cartItem.productId)}}><u>Remove</u></p>
+                        <p className="remove-btn-cart" style={{margin:"0 0 0 auto", display:"block", width:"80px", cursor:"pointer"}} onClick={()=>{removeProduct(cartItem.productId)}}><u>Remove</u></p>
                     </div>
                 )
             })}
-            <div style={{backgroundColor:"#F7F7F7", height:"130px",position: 'fixed', bottom: "60px", left: "0px", right: "0px", zIndex:"1000", padding:"5px 20px 0px 20px", }}>
-                <div style={{display:"flex", justifyContent:"space-between", margin:"0px", alignItems:"last baseline"}}>
-                    <p style={{fontSize:"1.1rem", fontWeight:"600"}}>SubTotal</p>
-                    <p style={{fontSize:"1.2rem", fontWeight:"500"}}>₦{total.toLocaleString("en-US")}.00</p>
-                </div>
-                <div>
-                    <div className="filter-bar" style={{color:"#fff", backgroundColor:"#000", width:"100%", height:"50px", textAlign:"center", padding:"7px", marginBottom:"10px", borderRadius:"6px"}}  onClick={handleOpen}>
-                        <p style={{margin:"5px 0 0 0"}}>Check out</p>
-                    </div>                   
-                    <Backdrop
-                        sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
-                        open={open}
-                        onClick={handleClose}
-                    >
-                        <Alert severity="info">Check Out not available now.</Alert>
-                    </Backdrop>    
+            <div style={{height:"130px"}}>
+                <div className="cart-summary">
+                    <div style={{display:"flex", justifyContent:"space-between", margin:"0px", alignItems:"last baseline"}}>
+                        <p style={{fontSize:"1.1rem", fontWeight:"600"}}>SubTotal</p>
+                        <p style={{fontSize:"1.2rem", fontWeight:"500"}}>₦{total.toLocaleString("en-US")}.00</p>
                     </div>
+                    <div>
+                        <div className="filter-bar" style={{color:"#fff", backgroundColor:"#000", width:"100%", height:"50px", textAlign:"center", padding:"7px", marginBottom:"10px", borderRadius:"6px"}}  onClick={handleOpen}>
+                            <p style={{margin:"5px 0 0 0"}}>Check out</p>
+                        </div>                   
+                        <Backdrop
+                            sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
+                            open={open}
+                            onClick={handleClose}
+                        >
+                            <Alert severity="info">Check Out not available now.</Alert>
+                        </Backdrop>    
+                        </div>
+                </div>                
             </div>
         </div>
     )

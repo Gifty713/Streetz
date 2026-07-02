@@ -1,9 +1,14 @@
 import "./ComponentStyle.css";
-import {Link} from "react-router-dom";
+import { useState } from "react";
+import {Link, NavLink} from "react-router-dom";
 const Nav=()=>{
     const cartArray = JSON.parse(localStorage.getItem("productIds"));
     const cartNum = cartArray.length;
     const screenWidth = window.innerWidth;
+    const [activeLink, setActiveLink] = useState("");
+    const handleActive=(me)=>{
+        setActiveLink(me);
+    }
     return(
         <div className="nav-container" >
             <div className="nav-cont">
@@ -13,9 +18,9 @@ const Nav=()=>{
                         <p className="company-name">Streetz</p>
                     </div>
                     {screenWidth> 850 && <div class="nav-links">
-                        <Link to="/" className="link">Home</Link>
-                        <Link to="/shop" className="link">Shop</Link>
-                        <Link to="/cart" className="link">Cart</Link>
+                        <NavLink to="/" className={({ isActive }) => isActive ? "link active" : "link"}onClick={()=>{handleActive("home")}}>Home</NavLink>
+                        <NavLink to="/shop" className={({ isActive }) => isActive ? "link active" : "link"} onClick={()=>{handleActive("shop")}}>Shop</NavLink>
+                        <NavLink to="/cart" className={({ isActive }) => isActive ? "link active" : "link"} onClick={()=>{handleActive("cart")}}>Cart</NavLink>
                     </div>
                     }
                     <Link to="/cart">
