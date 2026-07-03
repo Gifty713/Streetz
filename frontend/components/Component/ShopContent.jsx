@@ -5,7 +5,7 @@ import PullProducts from "./PullProducts";
 import ProductDescription from "./ProductDescription";
 import { useState } from "react";
 const ShopContent=()=>{
-    const categories= [{names:"Bottoms", images:"/coverPhotoBottoms.jfif"}, {names:"Tops", images:"/coverPhotoTops.jfif"}, {names:"Footwear", images:"/coverPhotoShoes.jfif"}, {names:"Accessories", images:"/coverPhotoAccessories.jfif"}];
+    const categories= [{names:"Bottoms", images:"/coverPhotoBottoms.avif"}, {names:"Tops", images:"/coverPhotoTops.avif"}, {names:"Footwear", images:"/coverPhotoShoes.avif"}, {names:"Accessories", images:"/coverPhotoAccessories.avif"}];
     // state for showing little nav on top of this section
     const [showNav, setShowNav] = useState(false);
     // state to keep track of the category
