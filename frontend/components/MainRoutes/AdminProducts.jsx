@@ -14,7 +14,7 @@ const AdminProducts = ()=>{
 
     const deleteProduct =async(id)=>{
         try {
-            const response = await fetch(`http://localhost:4000/api/v1/admin/deleteproduct/${id}`,{
+            const response = await fetch(`/api/v1/admin/deleteproduct/${id}`,{
                 method: "DELETE"
             })
             const data = await response.json();      

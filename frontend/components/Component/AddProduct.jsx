@@ -18,7 +18,7 @@ const AddProduct = ({childOpenPop, childSetOpenPop, refreshPage}) =>{
             const formData = new FormData(e.target);
             formData.append("category", category);
             setLoading(true);
-            const respond = await fetch("http://localhost:4000/api/v1/admin/addproduct", {
+            const respond = await fetch("/api/v1/admin/addproduct", {
                 method:"POST",
                 body: formData
             })

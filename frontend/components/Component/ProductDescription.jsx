@@ -14,7 +14,7 @@ const ProductDescription=()=>{
     const [oneProduct, setOneProduct] = useState("");
     const fetchOne=async()=>{
         try {
-            const respond = await fetch(`http://localhost:4000/api/v1/admin/getoneproduct/${id}`);
+            const respond = await fetch(`/api/v1/admin/getoneproduct/${id}`);
             const data = await respond.json();
             await setOneProduct(data);             
         } catch (error) {
