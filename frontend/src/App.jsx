@@ -23,7 +23,7 @@ const App=()=>{
 
     return(
         <>
-            {screenWidth <= 850 && (
+            {/* {screenWidth <= 850 && (
                 <div>
                     {!isAdmin ? <BottomNavUser /> : <BottomNavAdmin />}
                 </div>
@@ -40,7 +40,10 @@ const App=()=>{
                     <Route path="/admin/login" element={<AdminLogin/>}></Route>
                     <Route path="*" element={<NotFound/>}></Route>
                 </Routes>
-            </div>
+            </div> */}
+                <h1 style={{ padding: "2rem" }}>
+                React is working!
+                </h1>
         </>
     )
 }
