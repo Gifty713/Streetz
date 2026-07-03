@@ -2,7 +2,7 @@ import "./ComponentStyle.css";
 import { useState } from "react";
 import {Link, NavLink} from "react-router-dom";
 const Nav=()=>{
-    const cartArray = JSON.parse(localStorage.getItem("productIds"));
+    const cartArray = JSON.parse(localStorage.getItem("productIds")) ||[];
     const cartNum = cartArray.length;
     const screenWidth = window.innerWidth;
     const [activeLink, setActiveLink] = useState("");
