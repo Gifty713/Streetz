@@ -16,7 +16,7 @@ const ProductDescription=()=>{
         try {
             const respond = await fetch(`/api/v1/admin/getoneproduct/${id}`);
             const data = await respond.json();
-            await setOneProduct(data);             
+            await setOneProduct(data || []);             
         } catch (error) {
             console.log("Error in fetching content.");
         }
