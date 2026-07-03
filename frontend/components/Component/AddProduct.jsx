@@ -31,7 +31,7 @@ const AddProduct = ({childOpenPop, childSetOpenPop, refreshPage}) =>{
     }    
     return(
         <Box>
-            <Paper elevation={4} sx={{padding:"10px", marginTop:"-11%",}}>
+            <Paper className="add-product-paper" elevation={4} sx={{}}>
                 <form onSubmit={handleSubmit} style={{display:"block", width:"90%", margin:"0 auto"}}>                    
                     <label htmlFor="name">
                         <p style={{fontSize:"1.4rem", fontWeight:"600", margin:"0 0 12px 0"}}>Title</p>

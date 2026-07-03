@@ -29,6 +29,9 @@ const Nav=()=>{
                             {cartNum >0 && <div className="cart-svg-notif" >{cartNum}</div>}
                         </div>                
                     </Link>
+                    <Link to={"/admin/login"} className="admin-btn">
+                        Admin
+                    </Link>
                 </div>
             </div>
         </div>

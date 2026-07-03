@@ -327,6 +327,86 @@
     z-index:1000;
     padding:5px 20px 0px 20px;
 }
+
+/* Admin DashBoard Card*/
+.dashboard-title{
+    font-size:2rem;
+    margin-top:10px;
+    padding:0px 20px;
+    font-weight:600
+}
+.card-dashboard-1{
+    width:85%;
+    display:block ;
+    min-width:275px;
+    margin:0 auto 
+}
+.card-dashboard-2{
+    width:85%;
+    display:block;
+    min-width:275px;
+    margin:20px auto 
+}
+.card-dashboard-3{
+    width:85%;
+    display:block;
+    min-width:275px;
+    margin:0 auto 
+}
+/* Line Chart */
+.linechart-cont{
+    width:80%; 
+    margin:20px auto 0 auto;
+    display: none;
+}
+
+/* Admin Product  */
+.product-cont{
+    display:flex;
+    justify-content:space-between;
+    width:74%;
+    align-items:last baseline;
+    padding:0px 0px 0px 30px
+}
+.product-cont-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center
+}
+/* Add Product */
+.add-product-paper{
+    padding:10px;
+    margin-top:-11%;
+}
+/* Admin Link */
+.admin-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    color: #111;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 3px 10px;
+    margin-top: 5px;
+    height:40px;
+    border-width: 1.5px;
+
+    border: 2px solid #111;
+    border-radius: 800px;
+
+    white-space: nowrap;
+    transition: all 0.25s ease;
+}
+
+.admin-btn:hover{
+    background: #111;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
 /* Media query for laptop */
 @media screen and (min-width: 850px ){
     .app-cont{
@@ -571,5 +651,48 @@
     } 
     .remove-btn-cart:hover{
         color: #FF0000;
+    }
+    /* Admin DashBoard */
+    .dashboard-title{
+        padding-left: 100px ;
+    }
+    .card-dashboards-cont{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .card-dashboard-2{
+        margin: 0 auto;
+        width: 70%;
+    }
+    .card-dashboard-1{
+        width:70%;
+    }
+    .card-dashboard-3{
+        width: 70%;
+    }
+    .linechart-cont{
+        display: block;
+    }
+    /* Admin product */
+    .adminproduct-cont{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .product-cont{
+        justify-content:space-between;
+        width:30%;
+    }
+    /* Add product */
+    .add-product-paper{
+        margin-top:-4%;
+    }
+
+    .admin-btn{
+        font-size: 0.85rem;
+        padding: 6px 14px;
+        height: 20px;
     }
 }
