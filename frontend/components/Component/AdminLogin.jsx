@@ -10,17 +10,25 @@ const AdminLogin = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const DEMO_EMAIL = "admin@streetz.com";
-  const DEMO_PASSWORD = "streetz123";
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
 
-    if (email === DEMO_EMAIL && password === DEMO_PASSWORD) {
-      localStorage.setItem("isAdmin", "true");
+    try {
+      const response = await fetch("/api/v1/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+        credentials: "include",
+      });
+      const data = await response.json();
+      if (!response.ok) {
+        setError(data.message || "Unable to log in.");
+        return;
+      }
       navigate("/admin/dashboard");
-    } else {
-      setError("Invalid email or password.");
+    } catch {
+      setError("Unable to reach the server. Please try again.");
     }
   };
   
@@ -107,7 +115,10 @@ const AdminLogin = () => {
             </button>
 
           </form>
-
+            <p style={{color:"#666", marginTop:"10px", lineHeight:"1.6"}}>
+              Demo Admin Login Email: "admin@streetz.com" <br />
+              Demo Admin Login Password: "streetz123" 
+            </p>
         </div>
 
       </div>

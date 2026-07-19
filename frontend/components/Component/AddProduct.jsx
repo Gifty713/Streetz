@@ -20,7 +20,8 @@ const AddProduct = ({childOpenPop, childSetOpenPop, refreshPage}) =>{
             setLoading(true);
             const respond = await fetch("/api/v1/admin/addproduct", {
                 method:"POST",
-                body: formData
+                body: formData,
+                credentials: "include"
             })
             const data = await respond.json();     
             childSetOpenPop(false);

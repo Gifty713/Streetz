@@ -20,4 +20,4 @@ const startServer = async()=>{
         console.error("MONGODB connection failed", err);
     }
 }
-startServer()
+startServer();

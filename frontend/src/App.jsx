@@ -8,6 +8,7 @@ import NotFound from "../components/Component/NotFound";
 import ProductDescription from "../components/Component/ProductDescription";
 import ShopMain from "../components/Component/ShopMain";
 import AdminLogin from "../components/Component/AdminLogin";
+import ProtectedAdminRoute from "../components/Component/ProtectedAdminRoute";
 import {BrowserRouter, Routes, Route, useLocation} from "react-router-dom"
 import {BottomNavAdmin, BottomNavUser} from "../components/UIComponents/BottomNav";
 import "./App.css";
@@ -33,9 +34,9 @@ const App=()=>{
                     <Route path="/" element={<Home/>}></Route>
                     <Route path="/cart" element={<Cart/>}></Route>
                     <Route path="/shop" element={<Shop/>}></Route>
-                    <Route path="/admin/dashboard" element={<AdminHome/>}></Route>
-                    <Route path="/admin/orders" element={<AdminOrders/>}></Route>
-                    <Route path="/admin/products" element={<AdminProducts/>}></Route>
+                    <Route path="/admin/dashboard" element={<ProtectedAdminRoute><AdminHome/></ProtectedAdminRoute>}></Route>
+                    <Route path="/admin/orders" element={<ProtectedAdminRoute><AdminOrders/></ProtectedAdminRoute>}></Route>
+                    <Route path="/admin/products" element={<ProtectedAdminRoute><AdminProducts/></ProtectedAdminRoute>}></Route>
                     <Route path="/products/:id" element={<ProductDescription/>}></Route>
                     <Route path="/owner/login" element={<AdminLogin/>}></Route>
                     <Route path="*" element={<NotFound/>}></Route>
