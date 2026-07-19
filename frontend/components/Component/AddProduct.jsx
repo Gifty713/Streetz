@@ -44,7 +44,7 @@ const AddProduct = ({childOpenPop, childSetOpenPop, refreshPage}) =>{
                     </label>
                     <label htmlFor="price">
                         <p style={{fontSize:"1.4rem", fontWeight:"600", margin:"0 0 12px 0"}}>Price</p>
-                        <input type="number" className="input-bar-admin" name="price" style={{height:"30px", width:"85%", height:"50px", border:"1px solid #363434", borderRadius:"10px", padding:"5px 10px", fontSize:"1.4rem", backgroundColor:"#d8d1d1", marginBottom:"25px"}} autoComplete="off" placeholder="Add Price" />
+                        <input type="text" className="input-bar-admin" name="price" style={{height:"30px", width:"85%", height:"50px", border:"1px solid #363434", borderRadius:"10px", padding:"5px 10px", fontSize:"1.4rem", backgroundColor:"#d8d1d1", marginBottom:"25px"}} autoComplete="off" placeholder="Add Price" />
                     </label>  
                     <label htmlFor="category">
                         <p style={{fontSize:"1.4rem", fontWeight:"600", margin:"0 0 0px 0"}}>Select Category</p>
