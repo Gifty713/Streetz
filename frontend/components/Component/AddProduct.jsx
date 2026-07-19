@@ -31,9 +31,9 @@ const AddProduct = ({childOpenPop, childSetOpenPop, refreshPage}) =>{
         }
     }    
     return(
-        <Box>
+        <Box className="add-product-overlay">
             <Paper className="add-product-paper" elevation={4} sx={{}}>
-                <form onSubmit={handleSubmit} style={{display:"block", width:"90%", margin:"0 auto"}}>                    
+                <form className="add-product-form" onSubmit={handleSubmit} style={{display:"block", width:"90%", margin:"0 auto"}}>
                     <label htmlFor="name">
                         <p style={{fontSize:"1.4rem", fontWeight:"600", margin:"0 0 12px 0"}}>Title</p>
                         <input type="text" className="input-bar-admin" name="name" style={{height:"30px", width:"85%", height:"50px", border:"1px solid #363434", borderRadius:"10px", padding:"5px 10px", fontSize:"1.4rem", backgroundColor:"#d8d1d1", marginBottom:"25px"}} autoComplete="off" placeholder="Add Title" />

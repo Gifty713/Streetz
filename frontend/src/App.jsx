@@ -8,7 +8,7 @@ import NotFound from "../components/Component/NotFound";
 import ProductDescription from "../components/Component/ProductDescription";
 import ShopMain from "../components/Component/ShopMain";
 import AdminLogin from "../components/Component/AdminLogin";
-import ProtectedAdminRoute from "../components/Component/ProtectedAdminRoute";
+import ProtectedRoute from "../components/Component/ProtectedRoute";
 import {BrowserRouter, Routes, Route, useLocation} from "react-router-dom"
 import {BottomNavAdmin, BottomNavUser} from "../components/UIComponents/BottomNav";
 import "./App.css";
@@ -22,6 +22,8 @@ const App=()=>{
     const isAdmin = location.pathname.startsWith("/admin");
     const screenWidth = window.innerWidth
 
+    const [isAuth, setIsAuth] = useState(() => sessionStorage.getItem("isAdmin") === "true");
+
     return(
         <>
             {screenWidth <= 850 && (
@@ -34,11 +36,10 @@ const App=()=>{
                     <Route path="/" element={<Home/>}></Route>
                     <Route path="/cart" element={<Cart/>}></Route>
                     <Route path="/shop" element={<Shop/>}></Route>
-                    <Route path="/admin/dashboard" element={<ProtectedAdminRoute><AdminHome/></ProtectedAdminRoute>}></Route>
-                    <Route path="/admin/orders" element={<ProtectedAdminRoute><AdminOrders/></ProtectedAdminRoute>}></Route>
-                    <Route path="/admin/products" element={<ProtectedAdminRoute><AdminProducts/></ProtectedAdminRoute>}></Route>
+                    <Route path="/owner/login" element={<AdminLogin auth={isAuth} setAuth={setIsAuth}/>}></Route>
+                    <Route path="/admin/dashboard" element={<ProtectedRoute auth={isAuth}><AdminHome/></ProtectedRoute>}></Route>
+                    <Route path="/admin/products" element={<ProtectedRoute auth={isAuth}><AdminProducts/></ProtectedRoute>}></Route>
                     <Route path="/products/:id" element={<ProductDescription/>}></Route>
-                    <Route path="/owner/login" element={<AdminLogin/>}></Route>
                     <Route path="*" element={<NotFound/>}></Route>
                 </Routes>
             </div>

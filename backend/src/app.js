@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
 import adminRouter from "./routes/adminRoutes.js";
-import authRoute from "./routes/authRoute.js";
 import path from "path";
 
 const app = express();
@@ -11,7 +10,6 @@ app.use(cors());
 
 // calling app admin's route
 app.use("/api/v1/admin", adminRouter);
-app.use("/api/v1/auth", authRoute);
 
 app.use(express.static(path.join(__dirname, "../frontend/dist")));
 

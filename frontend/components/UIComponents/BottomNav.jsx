@@ -19,17 +19,18 @@ const BottomNavUser=()=>{
     return(
         <Box ref={ref}>
             <CssBaseline />
-            <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex:"1000" }} elevation={10}>
+            <Paper className="bottom-nav-shell bottom-nav-user" sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex:"1000" }} elevation={10}>
                 <BottomNavigation
+                className="bottom-nav"
                 value={location.pathname}
                 onChange={handleChange}
                 showLabels
-                sx={{backgroundColor:"#fff", opacity:"1",
+                sx={{
                     "& .Mui-selected": {
-                    color: "#000"  
+                    color: "#000"
                     },
                     "& .Mui-selected svg": {
-                    color: "#000"  
+                    color: "#000"
                     },                             
                 }}
                 elevation={5}
@@ -53,17 +54,18 @@ const BottomNavAdmin=()=>{
     return(
         <Box ref={ref}>
             <CssBaseline />
-            <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex:"1000" }} elevation={10}>
+            <Paper className="bottom-nav-shell bottom-nav-admin" sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex:"1000" }} elevation={10}>
                 <BottomNavigation
+                className="bottom-nav"
                 value={location.pathname}
                 onChange={handleChange}
                 showLabels
-                sx={{backgroundColor:"#fff", opacity:"1",
+                sx={{
                     "& .Mui-selected": {
-                    color: "#000"  
+                    color: "#000"
                     },
                     "& .Mui-selected svg": {
-                    color: "#000"  
+                    color: "#000"
                     },                             
                 }}
                 elevation={5}

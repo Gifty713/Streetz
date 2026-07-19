@@ -27,12 +27,18 @@ const AdminProducts = ()=>{
 
     const [openPop, setOpenPop] = useState(false);
     return(
-        <div>
+        <div className="admin-shell">
             <NavAdmin/>
-            <div className="adminproduct-cont">
-                <p style={{fontSize:"2rem", marginTop:"10px", padding:"0px 20px", fontWeight:"600", marginBottom:"0",}}>Products</p>
+            <main className="adminproduct-cont admin-products-page">
+                <div className="admin-products-heading">
+                    <div>
+                        <span className="admin-eyebrow">CATALOGUE</span>
+                        <p>Products</p>
+                        <span className="admin-heading-copy">Manage the pieces in your Streetz collection.</span>
+                    </div>
                     {openPop ? <svg viewBox="0 0 24 24" width={"50px"} height={"50px"} xmlns="http://www.w3.org/2000/svg" fill="#FF0000" style={{fontSize:"1.8rem", display:"block", width:"fit-content", color:"red", margin:"0 10% -35px auto", cursor:"pointer"}} onClick={()=>{setOpenPop(false)}}><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="none" stroke="#FF0000" strokeWidth="2" d="M7,7 L17,17 M7,17 L17,7"></path> </g></svg>
-                        : <Button variant="contained" sx={{display:"block", backgroundColor:"black", marginTop:"0px",padding:"10px",cursor:"pointer", marginLeft:"auto", marginRight:"10%", borderRadius:"10px",zIndex:"0", cursor:"pointer"}} onClick={()=>{setOpenPop(true)}}>Add Product</Button>}
+                        : <Button className="add-product-trigger" variant="contained" sx={{display:"block", backgroundColor:"black", marginTop:"0px",padding:"10px",cursor:"pointer", marginLeft:"auto", marginRight:"10%", borderRadius:"10px",zIndex:"0", cursor:"pointer"}} onClick={()=>{setOpenPop(true)}}>Add Product</Button>}
+                </div>
                     {openPop && <AddProduct childOpenPop = {openPop} childSetOpenPop={setOpenPop} refreshPage={fetchProducts(setDataa)}/> }
                     
                     {dataa.length === 0 ?
@@ -43,10 +49,10 @@ const AdminProducts = ()=>{
                         dataa.map((eachData)=>{
                             return(                 
                                 <div className="product-cont" key={eachData._id}>
-                                    <div style={{width:"fit-content"}}>
+                                    <div className="product-image-wrap" style={{width:"fit-content"}}>
                                         <img src={eachData.image} width="120px"  height="120px" alt="clothes" />
                                     </div>
-                                    <div style={{width:"45%", height:"150px"}}>
+                                    <div className="product-card-info" style={{width:"45%", height:"150px"}}>
                                         <p style={{fontSize:"1.25rem", marginBottom:"-5px", display: "inline-block",width: "max-content",}}>{eachData.name}</p>
                                         <p style={{fontSize:"1.4rem" ,marginTop:"0px", fontWeight:"500", marginBottom:"0"}}>₦{eachData.price.toLocaleString("en-US")}</p>
                                         <div style={{display:"flex", justifyContent:"space-between" ,width:"70%", margin:"0px 0 0 0"}}>
@@ -58,7 +64,7 @@ const AdminProducts = ()=>{
                             )
                         })
                     }
-            </div>
+            </main>
         </div>
     )
 }

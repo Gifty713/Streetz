@@ -2,9 +2,11 @@ import AdminDashBoardCards from "../Component/AdminDashBoardCards";
 import NavAdmin from "../Component/NavAdmin";
 const AdminHome =()=>{
     return(
-        <div>
+        <div className="admin-shell">
             <NavAdmin/>
-            <AdminDashBoardCards/>            
+            <main className="admin-dashboard">
+                <AdminDashBoardCards/>
+            </main>
         </div>
     )
 }

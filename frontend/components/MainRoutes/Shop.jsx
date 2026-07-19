@@ -2,7 +2,7 @@ import ShopContent from "../Component/ShopContent";
 import Nav from "../Component/Nav";
 const Shop=()=>{
     return(
-        <div>
+        <div className="storefront-page shop-page">
             <Nav/>
             <div className="shop-cont">
                 <p className="shop-main-title">Shop</p>

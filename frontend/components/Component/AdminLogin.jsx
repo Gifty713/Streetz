@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Nav from "./Nav";
 
-const AdminLogin = () => {
+const AdminLogin = ({auth, setAuth}) => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
@@ -10,25 +10,19 @@ const AdminLogin = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
+  const DEMO_EMAIL = "admin@streetz.com";
+  const DEMO_PASSWORD = "streetz123";
 
-    try {
-      const response = await fetch("/api/v1/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-        credentials: "include",
-      });
-      const data = await response.json();
-      if (!response.ok) {
-        setError(data.message || "Unable to log in.");
-        return;
-      }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (email === DEMO_EMAIL && password === DEMO_PASSWORD) {
+      sessionStorage.setItem("isAdmin", "true");
+      setAuth(true);
       navigate("/admin/dashboard");
-    } catch {
-      setError("Unable to reach the server. Please try again.");
+      console.log("changed to true");
+    } else {
+      setError("Invalid email or password.");
     }
   };
   
@@ -116,8 +110,8 @@ const AdminLogin = () => {
 
           </form>
             <p style={{color:"#666", marginTop:"10px", lineHeight:"1.6"}}>
-              Demo Admin Login Email: "admin@streetz.com" <br />
-              Demo Admin Login Password: "streetz123" 
+              Demo Admin Email: admin@streetz.com <br />
+              Demo Admin Password: streetz123
             </p>
         </div>
 

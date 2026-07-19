@@ -1,5 +1,5 @@
 import Avatar from '@mui/material/Avatar';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import "./ComponentStyle.css";
 const NavAdmin=()=>{
     const screenWidth = window.innerWidth
@@ -17,9 +17,9 @@ const NavAdmin=()=>{
                         <NavLink to="/admin/products" className={({ isActive }) => isActive ? "link active" : "link"} onClick={()=>{handleActive("shop")}}>Products</NavLink>
                     </div>
                     }
-                    <div style={{position:"relative", paddingRight:"20px"}}> 
-                        <Avatar>A</Avatar>
-                    </div> 
+                    <Link to={"/"} className="admin-btn" onClick={()=>{sessionStorage.setItem("isAdmin", "false")}}>
+                        Log Out
+                    </Link>
                 </div>
             </div>
         </div>
